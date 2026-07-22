@@ -23,7 +23,8 @@
 
   --shadow-card: 0 1px 3px rgba(46, 46, 46, 0.06);
   --font: "Quicksand", system-ui, sans-serif;
-  --max-width: 1120px;
+  --max-width: 1200px;
+  --header-max-width: 1400px;
 }
 
 *,
@@ -153,16 +154,15 @@ a {
   z-index: 100;
   background: rgba(253, 251, 247, 0.92);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
 }
 
 .header-inner {
-  max-width: var(--max-width);
+  max-width: var(--header-max-width);
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .logo-wordmark {
@@ -174,10 +174,14 @@ a {
 
 .primary-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
-  font-size: 0.9rem;
+  flex-wrap: nowrap;
+  gap: 0.35rem 0.85rem;
+  font-size: 0.875rem;
   font-weight: 500;
+}
+
+.primary-nav a {
+  white-space: nowrap;
 }
 
 .primary-nav a:hover,
@@ -189,13 +193,19 @@ a {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  flex-shrink: 0;
+  gap: 0.65rem;
+}
+
+.header-actions .text-link {
+  white-space: nowrap;
+  font-size: 0.875rem;
 }
 
 .search-form-field {
   position: relative;
   display: block;
-  width: min(220px, 40vw);
+  width: min(190px, 28vw);
 }
 
 .search-form-icon {
@@ -580,20 +590,23 @@ a {
 
 /* Responsive */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .header-inner {
     flex-wrap: wrap;
   }
 
   .primary-nav {
     order: 3;
+    flex-wrap: wrap;
     width: 100%;
   }
 
   .header-actions {
     margin-left: 0;
   }
+}
 
+@media (max-width: 900px) {
   .grid-layout {
     grid-template-columns: 1fr;
     grid-template-areas:
