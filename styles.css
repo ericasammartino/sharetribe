@@ -412,7 +412,9 @@ p {
 .events-card {
     flex: 2 1 auto;
     padding: 1.5rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -420,16 +422,22 @@ p {
     margin: -0.25rem 0 0;
     color: var(--text-secondary);
     font-size: 0.95rem;
+    text-align: center;
 }
 
 .event-thumbs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
     gap: 0.75rem;
+    justify-content: center;
+    width: 100%;
 }
 
 .event-thumb {
-    aspect-ratio: 3 / 4;
+    display: block;
+    flex-shrink: 0;
+    height: 150px;
+    width: 200px;
     overflow: hidden;
     border-radius: var(--radius-sm);
     border: 1.5px solid var(--border);
@@ -439,11 +447,8 @@ p {
 .event-thumb img {
     width: 100%;
     height: 100%;
+    max-width: none;
     object-fit: cover;
-}
-
-.events-card .btn {
-    justify-self: center;
 }
 
 .creator-card,
@@ -734,11 +739,13 @@ p {
     }
 
     .event-thumbs {
-        grid-template-columns: 1fr;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .event-thumb {
-        aspect-ratio: 16 / 9;
+        height: 120px;
+        width: 90px;
     }
 
     .footer-content,
