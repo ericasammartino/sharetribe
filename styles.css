@@ -510,6 +510,8 @@ p {
     grid-template-columns: repeat(3, max-content);
     gap: 16px;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .shop-intro {
