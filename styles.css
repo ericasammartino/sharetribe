@@ -396,7 +396,7 @@ p {
     max-width: var(--max-width);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
     align-items: stretch;
 }
@@ -407,17 +407,13 @@ p {
     gap: 1.25rem;
     height: 100%;
     min-height: 0;
-    min-width: 0;
 }
 
 .events-card {
     flex: 2 1 auto;
     padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 1rem;
-    min-width: 0;
-    width: 100%;
 }
 
 .card-subtitle {
@@ -427,16 +423,12 @@ p {
 }
 
 .event-thumbs {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
-    width: 100%;
 }
 
 .event-thumb {
-    display: block;
-    flex: 1 1 0;
-    min-width: 0;
     aspect-ratio: 3 / 4;
     overflow: hidden;
     border-radius: var(--radius-sm);
@@ -447,12 +439,11 @@ p {
 .event-thumb img {
     width: 100%;
     height: 100%;
-    max-width: none;
     object-fit: cover;
 }
 
 .events-card .btn {
-    align-self: center;
+    justify-self: center;
 }
 
 .creator-card,
@@ -743,11 +734,11 @@ p {
     }
 
     .event-thumbs {
-        gap: 0.5rem;
+        grid-template-columns: 1fr;
     }
 
     .event-thumb {
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 16 / 9;
     }
 
     .footer-content,
