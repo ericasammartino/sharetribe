@@ -410,8 +410,9 @@ p {
 }
 
 .events-card {
-    flex: 2 1 auto;
-    padding: 1.5rem;
+    flex: 3 1 auto;
+    min-height: 440px;
+    padding: 1.5rem 1.5rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -436,8 +437,8 @@ p {
 .event-thumb {
     display: block;
     flex-shrink: 0;
-    height: 150px;
-    width: 200px;
+    height: 190px;
+    width: 140px;
     overflow: hidden;
     border-radius: var(--radius-sm);
     border: 1.5px solid var(--border);
@@ -451,6 +452,10 @@ p {
     object-fit: cover;
 }
 
+.events-card .btn {
+    margin-top: 0.5rem;
+}
+
 .creator-card,
 .vendors-card {
     position: relative;
@@ -460,8 +465,8 @@ p {
 
 .vendors-card {
     flex: 1 0 auto;
-    min-height: 180px;
-    max-height: 220px;
+    min-height: 160px;
+    max-height: 200px;
 }
 
 .creator-card {
