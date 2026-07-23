@@ -507,9 +507,13 @@ p {
 
 .shop-layout {
     display: grid;
-    grid-template-columns: minmax(180px, 240px) 1fr;
-    gap: 2rem;
-    align-items: start;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.shop-intro {
+    align-self: center;
 }
 
 .shop-intro p {
@@ -518,14 +522,14 @@ p {
 }
 
 .category-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    display: contents;
 }
 
 .category-tile {
     display: grid;
     gap: 0.65rem;
+    justify-items: center;
+    text-align: center;
     transition: transform 0.2s ease;
 }
 
@@ -692,10 +696,17 @@ p {
 
     .shop-layout {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .shop-intro {
+        align-self: start;
     }
 
     .category-grid {
+        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
     }
 }
 
