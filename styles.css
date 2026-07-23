@@ -202,10 +202,16 @@ p {
 }
 
 .logo-wordmark {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-wordmark img {
+  display: block;
+  width: auto;
+  height: 40px;
+  max-width: none;
 }
 
 .primary-nav {
@@ -296,6 +302,13 @@ p {
   width: 40px;
   height: 40px;
   color: var(--text);
+}
+
+.icon-button img {
+  display: block;
+  width: 28px;
+  height: 24px;
+  max-width: none;
 }
 
 .icon-button:hover,
@@ -575,6 +588,7 @@ p {
 
 .label-blue { color: var(--label-blue); }
 .label-green { color: var(--label-green); }
+.label-brown,
 .label-maroon { color: var(--label-maroon); }
 .label-pink { color: var(--label-pink); }
 .label-navy { color: var(--label-navy); }

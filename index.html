@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="logo-wordmark" aria-label="ON LOT home">ON LOT</a>
+      <a href="/" class="logo-wordmark" aria-label="ON LOT home">
+        <img src="./assets/logo.jpg" alt="ON LOT">
+      </a>
 
       <nav class="primary-nav" aria-label="Main">
         <a href="#what-is-on-lot">what is on lot?</a>
@@ -36,11 +40,7 @@
         </form>
 
         <a href="cart.html" class="icon-button" aria-label="Shopping cart">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-            <circle cx="9" cy="20" r="1.5"></circle>
-            <circle cx="18" cy="20" r="1.5"></circle>
-            <path d="M2 3h2l2.2 12.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L22 6H6"></path>
-          </svg>
+          <img src="./assets/cart-shopping.svg" alt="" width="28" height="24">
         </a>
 
         <a href="signup.html" class="text-link">Create an Account</a>
@@ -52,16 +52,8 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero-inner">
-        <!-- Replace src with your illustrated logo asset -->
-        <img
-          class="hero-logo"
-          src="assets/logo-on-lot.png"
-          alt="ON LOT"
-          width="720"
-          height="280"
-          id="hero-heading"
-        >
-        <p class="tagline">the online lot - where you can find everything but the balloons 🎈</p>
+        <img class="hero-logo" src="assets/hero-logo.jpg" alt="ON LOT" width="720" height="280" id="hero-heading">
+        <p class="tagline">the online lot - where you can find everything but the balloons</p>
         <a href="shop.html" class="btn btn-outline btn-hero">shop on lot</a>
       </div>
     </section>
@@ -69,8 +61,8 @@
     <section class="card-section" id="what-is-on-lot" aria-labelledby="what-heading">
       <div class="card what-card">
         <h3 id="what-heading">What is on lot?</h3>
-        <p>on lot is where you find the vendors, makers, and weird treasures from the scene — even when you're not in the parking lot.</p>
-        <p>check what's happening, meet the people behind the merch, and shop the lot when you're ready. everything but the balloons.</p>
+        <p>Regretting not buying that item on lot? This marketplace helps you find and buy goods from the vendors you saw at shows, while keeping support inside the community.</p>
+        <p>You can shop handmade gear, discover upcoming events with vendors, and get to know the artists and makers behind the work.</p>
       </div>
     </section>
 
@@ -82,24 +74,20 @@
             <p class="card-subtitle">Details on where to find your favorite vendors.</p>
             <div class="event-thumbs">
               <a href="events.html" class="event-thumb">
-                <img src="assets/events/billy-strings.jpg" alt="Billy Strings event poster">
+                <img src="assets/flyer1.jpg" alt="Billy Strings event poster">
               </a>
               <a href="events.html" class="event-thumb">
-                <img src="assets/events/thankful-yoga.jpg" alt="Thankful for Yoga event poster">
+                <img src="assets/flyer2.jpg" alt="Thankful for Yoga event poster">
               </a>
               <a href="events.html" class="event-thumb">
-                <img src="assets/events/wyllys.jpg" alt="Wyllys event poster">
+                <img src="assets/flyer3.jpg" alt="Wyllys event poster">
               </a>
             </div>
             <a href="events.html" class="btn btn-outline">see all events</a>
           </article>
 
           <article class="card vendors-card">
-            <img
-              class="vendors-photo"
-              src="assets/vendors-lot.jpg"
-              alt="Outdoor market at the lot"
-            >
+            <img class="vendors-photo" src="assets/vendors-lot.jpg" alt="Outdoor market at the lot">
             <div class="vendors-overlay">
               <div class="vendors-copy">
                 <h2>Vendors</h2>
@@ -111,11 +99,7 @@
         </div>
 
         <article class="card creator-card">
-          <img
-            class="creator-photo"
-            src="assets/creator-spotlight.jpg"
-            alt="Vendor wearing colorful woven bracelets"
-          >
+          <img class="creator-photo" src="assets/creator-spotlight.jpg" alt="Vendor wearing colorful woven bracelets">
           <div class="creator-overlay">
             <div class="creator-copy">
               <h2>Creator Spotlight</h2>
@@ -152,7 +136,7 @@
               <div class="category-image-well">
                 <img src="assets/shop/housewares.jpg" alt="Shop interior with lamps">
               </div>
-              <span class="category-label label-maroon">housewares</span>
+              <span class="category-label label-brown">housewares</span>
             </a>
             <a href="shop.html?category=jewelry" class="category-tile">
               <div class="category-image-well">
@@ -221,4 +205,5 @@
     </div>
   </footer>
 </body>
+
 </html>
