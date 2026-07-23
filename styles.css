@@ -561,7 +561,7 @@ p {
 
 .category-tile:hover,
 .category-tile:focus-visible {
-    transform: translateY(-2px);
+    transform: scale(1.05);
 }
 
 .category-image-well {
