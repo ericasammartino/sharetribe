@@ -542,8 +542,9 @@ p {
     gap: 0.65rem;
     justify-items: start;
     align-content: start;
-    width: 100%;
-    min-width: 0;
+    justify-self: start;
+    width: fit-content;
+    max-width: 100%;
     padding: 0.75rem;
     text-align: left;
     background: var(--well);
@@ -580,7 +581,6 @@ p {
     font-weight: 600;
     line-height: 1.2;
     text-align: left;
-    width: 100%;
 }
 
 .label-blue {
@@ -732,6 +732,11 @@ p {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1rem;
+    }
+
+    .category-tile {
+        width: 100%;
+        justify-self: stretch;
     }
 
     .category-image-well {
