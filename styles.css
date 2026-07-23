@@ -96,9 +96,27 @@ p {
 }
 
 .btn-outline {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
     background: var(--surface);
     color: var(--text);
     border-color: var(--border-strong);
+}
+
+.btn-outline::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 3px);
+    width: 46%;
+    height: 0;
+    transform: translateX(-50%);
+    background: var(--ui);
+    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .btn-hero {
@@ -110,6 +128,73 @@ p {
 .btn-outline:focus-visible {
     background: var(--ui);
     color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-outline:hover::after,
+.btn-outline:focus-visible::after {
+    animation: btn-liquid-drip 0.7s cubic-bezier(0.45, 0.05, 0.2, 1) forwards;
+}
+
+@keyframes btn-liquid-drip {
+    0% {
+        height: 0;
+        width: 46%;
+        opacity: 0;
+        border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    18% {
+        opacity: 1;
+        height: 8px;
+        width: 52%;
+        border-radius: 55% 45% 50% 50% / 90% 90% 10% 10%;
+    }
+
+    38% {
+        height: 16px;
+        width: 40%;
+        border-radius: 48% 52% 58% 42% / 65% 65% 35% 35%;
+    }
+
+    58% {
+        height: 24px;
+        width: 30%;
+        border-radius: 52% 48% 50% 50% / 50% 50% 50% 50%;
+    }
+
+    78% {
+        height: 32px;
+        width: 24%;
+        border-radius: 50% 50% 46% 54% / 35% 35% 65% 65%;
+    }
+
+    92% {
+        height: 36px;
+        width: 20%;
+        border-radius: 50% 50% 50% 50% / 28% 28% 72% 72%;
+    }
+
+    100% {
+        height: 40px;
+        width: 16px;
+        opacity: 1;
+        border-radius: 50%;
+        transform: translateX(-50%) translateY(6px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-outline:hover,
+    .btn-outline:focus-visible {
+        transform: none;
+    }
+
+    .btn-outline:hover::after,
+    .btn-outline:focus-visible::after {
+        animation: none;
+    }
 }
 
 .btn-filled {
@@ -544,8 +629,6 @@ p {
 }
 
 .category-tile {
-    position: relative;
-    isolation: isolate;
     display: grid;
     grid-template-rows: auto auto;
     gap: 0.65rem;
@@ -558,103 +641,12 @@ p {
     background: var(--well);
     border: 1.5px solid var(--border);
     border-radius: var(--radius-md);
-    overflow: visible;
-    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
-}
-
-.category-tile > * {
-    position: relative;
-    z-index: 1;
-}
-
-.category-tile::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: calc(100% - 5px);
-    width: 46%;
-    height: 0;
-    transform: translateX(-50%);
-    background: var(--well);
-    border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
+    transition: transform 0.2s ease;
 }
 
 .category-tile:hover,
 .category-tile:focus-visible {
-    transform: translateY(-2px);
-}
-
-.category-tile:hover::after,
-.category-tile:focus-visible::after {
-    animation: category-liquid-drip 0.7s cubic-bezier(0.45, 0.05, 0.2, 1) forwards;
-}
-
-@keyframes category-liquid-drip {
-    0% {
-        height: 0;
-        width: 46%;
-        opacity: 0;
-        border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%;
-        transform: translateX(-50%) translateY(0);
-    }
-
-    18% {
-        opacity: 1;
-        height: 8px;
-        width: 52%;
-        border-radius: 55% 45% 50% 50% / 90% 90% 10% 10%;
-    }
-
-    38% {
-        height: 16px;
-        width: 40%;
-        border-radius: 48% 52% 58% 42% / 65% 65% 35% 35%;
-    }
-
-    58% {
-        height: 24px;
-        width: 30%;
-        border-radius: 52% 48% 50% 50% / 50% 50% 50% 50%;
-    }
-
-    78% {
-        height: 32px;
-        width: 24%;
-        border-radius: 50% 50% 46% 54% / 35% 35% 65% 65%;
-    }
-
-    92% {
-        height: 36px;
-        width: 20%;
-        border-radius: 50% 50% 50% 50% / 28% 28% 72% 72%;
-    }
-
-    100% {
-        height: 40px;
-        width: 16px;
-        opacity: 1;
-        border-radius: 50%;
-        transform: translateX(-50%) translateY(6px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .category-tile {
-        transition: none;
-    }
-
-    .category-tile:hover,
-    .category-tile:focus-visible {
-        transform: none;
-    }
-
-    .category-tile:hover::after,
-    .category-tile:focus-visible::after {
-        animation: none;
-    }
+    transform: scale(1.05);
 }
 
 .category-image-well {
