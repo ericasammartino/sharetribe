@@ -1076,6 +1076,56 @@ p {
     background: var(--surface);
 }
 
+/* Shop catalog pages (New Arrivals, etc.) */
+
+.shop-catalog-page .shop-page-title {
+    margin-top: 0.5rem;
+}
+
+.shop-breadcrumbs {
+    margin-bottom: 1.5rem;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.shop-breadcrumbs a {
+    color: var(--text-secondary);
+}
+
+.shop-breadcrumbs a:hover,
+.shop-breadcrumbs a:focus-visible {
+    color: var(--text);
+    text-decoration: underline;
+}
+
+.shop-breadcrumbs-sep {
+    margin: 0 0.5rem;
+}
+
+.shop-catalog-toolbar {
+    margin-bottom: 1.5rem;
+}
+
+.shop-catalog-toolbar .shop-filter-btn {
+    margin-bottom: 0;
+}
+
+.product-grid--catalog {
+    gap: 1.25rem;
+}
+
+.product-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.product-vendor {
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
 /* Footer */
 
 .site-footer {
@@ -1283,6 +1333,22 @@ p {
 
     .spotlight-shop-btn {
         max-width: none;
+    }
+
+    .shop-page {
+        padding: 2rem 1.25rem 3rem;
+    }
+
+    .shop-tags {
+        gap: 0.75rem 1.25rem;
+    }
+
+    .shop-row {
+        padding: 1.25rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 
     .footer-content,
