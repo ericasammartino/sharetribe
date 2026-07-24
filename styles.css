@@ -204,6 +204,18 @@ p {
     text-decoration: underline;
 }
 
+.primary-nav a[aria-current="page"] {
+    padding: 0.2rem 0.6rem;
+    border: 1.5px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+}
+
+.primary-nav a[aria-current="page"]:hover,
+.primary-nav a[aria-current="page"]:focus-visible {
+    text-decoration: none;
+}
+
 .header-actions {
     margin-left: auto;
     display: flex;
@@ -612,6 +624,92 @@ p {
 .shop-cta {
     display: flex;
     margin: 2rem auto 0;
+    width: fit-content;
+}
+
+/* Events page */
+
+.events-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+}
+
+.events-page-title {
+    margin: 0 0 2.5rem;
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, var(--h1));
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.events-list {
+    border-top: 1px solid var(--border);
+}
+
+.event-row {
+    border-bottom: 1px solid var(--border);
+}
+
+.event-row-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+.event-row-summary::-webkit-details-marker {
+    display: none;
+}
+
+.event-row-info {
+    min-width: 0;
+}
+
+.event-name {
+    margin: 0;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.event-dates {
+    margin: 0.4rem 0 0;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+.event-chevron {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: transform 0.2s ease;
+}
+
+.event-row[open] .event-chevron {
+    transform: rotate(180deg);
+}
+
+.event-row-details {
+    padding: 0 0 1.75rem;
+    max-width: 48rem;
+}
+
+.event-row-details p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+}
+
+.events-submit-btn {
+    display: flex;
+    margin: 3rem auto 0;
     width: fit-content;
 }
 
