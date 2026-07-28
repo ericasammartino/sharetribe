@@ -11,10 +11,22 @@
     const titleEl = document.querySelector("[data-search-query-label]");
     const browseEl = document.querySelector("[data-shop-browse]");
     const searchResultsWrap = document.querySelector("[data-shop-search-results]");
-    const shopMain = document.querySelector(".shop-page");
+    const shopMain = document.querySelector("main.shop-page");
+    const isShopPage = Boolean(shopMain);
+
+    const browseSelectors =
+        "[data-shop-browse], main.shop-page .shop-tags, main.shop-page .shop-filter-btn, main.shop-page .shop-sections";
 
     if (!resultsEl) {
         return;
+    }
+
+    function getBrowseElements() {
+        return document.querySelectorAll(browseSelectors);
+    }
+
+    function getResultsWraps() {
+        return document.querySelectorAll("[data-shop-search-results], main.shop-page .shop-search-results");
     }
 
     function setStatus(message) {
@@ -24,12 +36,16 @@
     }
 
     function setBrowseMode(isBrowsing) {
-        if (browseEl) {
-            browseEl.hidden = isBrowsing === false;
-        }
-        if (searchResultsWrap) {
-            searchResultsWrap.hidden = isBrowsing;
-        }
+        getBrowseElements().forEach((el) => {
+            el.style.display = isBrowsing ? "" : "none";
+            el.hidden = !isBrowsing;
+        });
+
+        getResultsWraps().forEach((el) => {
+            el.style.display = isBrowsing ? "none" : "";
+            el.hidden = isBrowsing;
+        });
+
         if (shopMain) {
             shopMain.classList.toggle("is-search-mode", !isBrowsing);
         }
@@ -71,7 +87,7 @@
     function renderResults(hits, query) {
         const trimmed = (query || "").trim();
 
-        if (titleEl && browseEl) {
+        if (titleEl && isShopPage) {
             titleEl.textContent = trimmed ? `Shop — “${trimmed}”` : "Shop";
         } else if (titleEl) {
             titleEl.textContent = trimmed ? `Results for “${trimmed}”` : "Search";
@@ -80,7 +96,7 @@
         if (!trimmed) {
             resultsEl.innerHTML = "";
             setBrowseMode(true);
-            if (!browseEl) {
+            if (!isShopPage) {
                 setStatus("Enter a search term above.");
             }
             return;
@@ -183,7 +199,7 @@
         }
     }
 
-    forms.forEach((form) => {
+    function bindSearchForm(form) {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             const query = readSearchQuery(form);
@@ -198,7 +214,22 @@
             window.history.replaceState({}, "", url);
             runSearch(query);
         });
-    });
+    }
+
+    forms.forEach(bindSearchForm);
+
+    if (isShopPage) {
+        shopMain.querySelectorAll(".shop-search-form, .search-form").forEach((form) => {
+            if (!form.hasAttribute("data-typesense-search-form")) {
+                form.setAttribute("data-typesense-search-form", "");
+                const input = form.querySelector('input[type="search"], input[name="q"]');
+                if (input && !input.hasAttribute("data-typesense-search-input")) {
+                    input.setAttribute("data-typesense-search-input", "");
+                }
+                bindSearchForm(form);
+            }
+        });
+    }
 
     const initialQuery = readSearchQuery();
     syncInputs(initialQuery);

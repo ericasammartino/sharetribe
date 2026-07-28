@@ -702,12 +702,21 @@ p {
     line-height: 1.1;
 }
 
-.shop-page.is-search-mode [data-shop-browse] {
+.shop-page.is-search-mode [data-shop-browse],
+.shop-page.is-search-mode .shop-tags,
+.shop-page.is-search-mode .shop-filter-btn,
+.shop-page.is-search-mode .shop-sections {
+    display: none !important;
+}
+
+.shop-page [data-shop-search-results],
+.shop-page .shop-search-results {
     display: none;
 }
 
-.shop-page:not(.is-search-mode) [data-shop-search-results] {
-    display: none;
+.shop-page.is-search-mode [data-shop-search-results],
+.shop-page.is-search-mode .shop-search-results {
+    display: block;
 }
 
 [hidden] {

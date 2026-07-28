@@ -50,7 +50,7 @@
     <main id="main" class="shop-page">
         <h1 class="shop-page-title" data-search-query-label>Shop</h1>
 
-        <form class="shop-search-form" role="search" action="shop.html" data-typesense-search-form>
+        <form class="shop-search-form" role="search" action="shop.html" method="get" data-typesense-search-form>
             <label class="shop-search-field" for="shop-search">
                 <span class="shop-search-icon" aria-hidden="true">
                     <img src="./assets/magnifying-glass.svg" alt="" width="20" height="20">
@@ -59,7 +59,7 @@
             </label>
         </form>
 
-        <div data-shop-browse>
+        <div class="shop-browse" data-shop-browse>
         <nav class="shop-tags" aria-label="Shop collections">
             <a href="shop.html?tag=remembering-jerry">remembering jerry</a>
             <a href="shop.html?tag=summer-tour">summer tour</a>
