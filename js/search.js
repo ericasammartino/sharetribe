@@ -9,8 +9,6 @@
     const statusEl = document.querySelector("[data-search-status]");
     const resultsEl = document.querySelector("[data-search-results]");
     const titleEl = document.querySelector("[data-search-query-label]");
-    const browseEl = document.querySelector("[data-shop-browse]");
-    const searchResultsWrap = document.querySelector("[data-shop-search-results]");
     const shopMain = document.querySelector("main.shop-page");
     const isShopPage = Boolean(shopMain);
 
