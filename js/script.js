@@ -1,5 +1,5 @@
 /**
- * ON LOT — hero CTA text swap + delayed navigation (index.html)
+ * ON LOT — site scripts (homepage hero CTA, etc.)
  */
 (function () {
     const button = document.querySelector("[data-hero-cta]");
