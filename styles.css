@@ -702,6 +702,18 @@ p {
     line-height: 1.1;
 }
 
+.shop-page.is-search-mode [data-shop-browse] {
+    display: none;
+}
+
+.shop-page:not(.is-search-mode) [data-shop-search-results] {
+    display: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
 .shop-tags {
     display: flex;
     flex-wrap: wrap;

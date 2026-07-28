@@ -11,6 +11,7 @@
     const titleEl = document.querySelector("[data-search-query-label]");
     const browseEl = document.querySelector("[data-shop-browse]");
     const searchResultsWrap = document.querySelector("[data-shop-search-results]");
+    const shopMain = document.querySelector(".shop-page");
 
     if (!resultsEl) {
         return;
@@ -24,10 +25,13 @@
 
     function setBrowseMode(isBrowsing) {
         if (browseEl) {
-            browseEl.hidden = !isBrowsing;
+            browseEl.hidden = isBrowsing === false;
         }
         if (searchResultsWrap) {
             searchResultsWrap.hidden = isBrowsing;
+        }
+        if (shopMain) {
+            shopMain.classList.toggle("is-search-mode", !isBrowsing);
         }
     }
 
@@ -35,6 +39,26 @@
         inputs.forEach((input) => {
             input.value = value;
         });
+    }
+
+    function readSearchQuery(sourceForm) {
+        if (sourceForm) {
+            const formInput = sourceForm.querySelector("[data-typesense-search-input]");
+            const formValue = formInput ? formInput.value.trim() : "";
+            if (formValue) {
+                return formValue;
+            }
+        }
+
+        for (const input of inputs) {
+            const value = input.value.trim();
+            if (value) {
+                return value;
+            }
+        }
+
+        const fromUrl = new URLSearchParams(window.location.search).get("q");
+        return fromUrl ? fromUrl.trim() : "";
     }
 
     function formatPrice(value) {
@@ -147,6 +171,8 @@
                     q: trimmed,
                     query_by: "name,vendor,description,category",
                     per_page: 24,
+                    drop_tokens_threshold: 0,
+                    typo_tokens_threshold: 0,
                 });
 
             renderResults(result.hits || [], trimmed);
@@ -160,8 +186,7 @@
     forms.forEach((form) => {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-            const input = form.querySelector("[data-typesense-search-input]");
-            const query = input ? input.value.trim() : "";
+            const query = readSearchQuery(form);
             syncInputs(query);
 
             const url = new URL(window.location.href);
@@ -175,7 +200,7 @@
         });
     });
 
-    const initialQuery = new URLSearchParams(window.location.search).get("q") || "";
+    const initialQuery = readSearchQuery();
     syncInputs(initialQuery);
     runSearch(initialQuery);
 })();
