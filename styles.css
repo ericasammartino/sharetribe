@@ -263,6 +263,93 @@ p {
     color: var(--text-secondary);
 }
 
+.search-autocomplete {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    right: 0;
+    z-index: 200;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 24px rgba(46, 46, 46, 0.12);
+}
+
+.search-autocomplete-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s ease;
+}
+
+.search-autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.search-autocomplete-item:hover,
+.search-autocomplete-item.is-active {
+    background: var(--well);
+}
+
+.search-autocomplete-all {
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.search-autocomplete-thumb {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--well);
+}
+
+.search-autocomplete-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.search-autocomplete-thumb-placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--well);
+}
+
+.search-autocomplete-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.search-autocomplete-name {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.search-autocomplete-vendor {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.search-autocomplete-price {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 .icon-button {
     display: inline-flex;
     align-items: center;
