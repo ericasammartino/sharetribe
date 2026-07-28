@@ -22,6 +22,7 @@
     --label-maroon: #7F669E;
     --label-orange: #F1795E;
     --label-navy: #FDB91B;
+    --label-pink: #CD6CC1;
 
     --radius-sm: 8px;
     --radius-md: 16px;
@@ -728,6 +729,10 @@ p {
 
 .label-orange {
     color: var(--label-orange);
+}
+
+.label-pink {
+    color: var(--label-pink);
 }
 
 .label-navy {
