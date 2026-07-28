@@ -1,0 +1,12 @@
+{
+  "name": "on-lot",
+  "private": true,
+  "description": "ON LOT marketplace static site",
+  "scripts": {
+    "typesense:seed": "node scripts/seed-typesense.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "typesense": "^2.0.3"
+  }
+}

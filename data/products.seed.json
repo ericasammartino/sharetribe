@@ -1,0 +1,92 @@
+[
+  {
+    "id": "billy-pin",
+    "name": "Billy Pin",
+    "vendor": "Lucy's Pins",
+    "price": 20,
+    "description": "Billy Strings enamel pin",
+    "category": "pins",
+    "slug": "billy-pin",
+    "image": "assets/shop/pin.jpg"
+  },
+  {
+    "id": "phish-logo-patch",
+    "name": "Phish Logo Patch",
+    "vendor": "Phish Phinds",
+    "price": 10,
+    "description": "Embroidered Phish logo patch",
+    "category": "pins",
+    "slug": "phish-logo-patch",
+    "image": "assets/shop/products/phish-patch.jpg"
+  },
+  {
+    "id": "sun-moon-necklace",
+    "name": "Sun & Moon Necklace",
+    "vendor": "Gemma's Gems",
+    "price": 50,
+    "description": "Sun and moon pendant necklace",
+    "category": "jewelry",
+    "slug": "sun-moon-necklace",
+    "image": "assets/shop/jewelry.jpg"
+  },
+  {
+    "id": "phish-tshirt",
+    "name": "Phish T-shirt",
+    "vendor": "Lot Apparel Co",
+    "price": 35,
+    "description": "Graphic Phish tour t-shirt",
+    "category": "clothing",
+    "slug": "phish-tshirt",
+    "image": "assets/shop/clothing.jpg"
+  },
+  {
+    "id": "grateful-dead-hat",
+    "name": "Grateful Dead Hat",
+    "vendor": "Ice Cold Hatties",
+    "price": 25,
+    "description": "Embroidered baseball cap",
+    "category": "clothing",
+    "slug": "grateful-dead-hat",
+    "image": "assets/creator-spotlight/cap.jpg"
+  },
+  {
+    "id": "john-bell-yeti",
+    "name": "John Bell Yeti",
+    "vendor": "Lot Gear",
+    "price": 30,
+    "description": "Custom decorated drink tumbler",
+    "category": "housewares",
+    "slug": "john-bell-yeti",
+    "image": "assets/shop/housewares.jpg"
+  },
+  {
+    "id": "rings",
+    "name": "Rings",
+    "vendor": "Gemma's Gems",
+    "price": 10,
+    "description": "Handmade ring set",
+    "category": "jewelry",
+    "slug": "rings",
+    "image": "assets/shop/jewelry.jpg"
+  },
+  {
+    "id": "macrame",
+    "name": "Macrame",
+    "vendor": "Handmade on Lot",
+    "price": 15,
+    "description": "Macramé wall hanging",
+    "category": "handmade art",
+    "slug": "macrame",
+    "image": "assets/shop/handmade-art.jpg"
+  },
+  {
+    "id": "tie-dye-tshirt",
+    "name": "Tie Dye T-shirt",
+    "vendor": "Lot Apparel Co",
+    "price": 15,
+    "description": "Hand-dyed tour tee",
+    "category": "clothing",
+    "slug": "tie-dye-tshirt",
+    "image": "assets/shop/clothing.jpg"
+  }
+]
