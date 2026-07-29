@@ -7,7 +7,7 @@
         return;
     }
 
-    const navDelayMs = 450;
+    const navDelayMs = 800;
     let isNavigating = false;
 
     function showActiveText() {
