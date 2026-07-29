@@ -24,7 +24,15 @@
     button.addEventListener("mouseleave", showDefaultText);
     button.addEventListener("focus", showActiveText);
     button.addEventListener("blur", showDefaultText);
+    button.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+    });
     button.addEventListener("touchstart", showActiveText, { passive: true });
+    button.addEventListener("touchend", () => {
+        if (!isNavigating) {
+            window.setTimeout(showDefaultText, 350);
+        }
+    }, { passive: true });
 
     button.addEventListener("click", (event) => {
         event.preventDefault();
