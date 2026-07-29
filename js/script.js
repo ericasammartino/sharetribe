@@ -7,22 +7,16 @@
         return;
     }
 
-    const defaultText = button.textContent.trim();
-    const activeText = "come poke around";
     const navDelayMs = 450;
     let isNavigating = false;
 
-    function setText(text) {
-        button.textContent = text;
-    }
-
     function showActiveText() {
-        setText(activeText);
+        button.classList.add("is-active");
     }
 
     function showDefaultText() {
         if (!isNavigating) {
-            setText(defaultText);
+            button.classList.remove("is-active");
         }
     }
 

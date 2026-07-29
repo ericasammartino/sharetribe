@@ -134,8 +134,31 @@ p {
 }
 
 .btn-hero {
+    position: relative;
     font-size: var(--h4);
     font-weight: 600;
+}
+
+.btn-hero-label {
+    display: block;
+    transition: opacity 0.35s ease;
+}
+
+.btn-hero-label--active {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.btn-hero.is-active .btn-hero-label--default {
+    opacity: 0;
+}
+
+.btn-hero.is-active .btn-hero-label--active {
+    opacity: 1;
 }
 
 .btn-outline {
