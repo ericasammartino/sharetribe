@@ -1123,10 +1123,12 @@ body.is-event-flyer-modal-open {
     color: var(--text);
 }
 
-.vendor-info-icon svg {
+.vendor-info-icon img {
     display: block;
     width: 28px;
     height: 28px;
+    max-width: none;
+    object-fit: contain;
 }
 
 .vendor-info-section p {
