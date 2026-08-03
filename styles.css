@@ -1020,14 +1020,29 @@ body.is-event-flyer-modal-open {
 }
 
 .event-row-details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
     padding: 0 0 1.75rem;
-    max-width: 48rem;
+    max-width: none;
+}
+
+.event-row-copy {
+    flex: 1;
+    min-width: 0;
 }
 
 .event-row-details p {
     margin: 0;
     color: var(--text-secondary);
     font-size: var(--text-sm);
+}
+
+.event-row-flyer.event-thumb {
+    flex-shrink: 0;
+    height: 180px;
+    width: 132px;
 }
 
 .events-submit-btn {
