@@ -639,7 +639,7 @@ p {
     opacity: 1;
 }
 
-/* Event flyer popup modal */
+/* Event flyer popup modal — fixed overlay centered in the viewport */
 
 body.is-event-flyer-modal-open {
     overflow: hidden;
@@ -647,23 +647,39 @@ body.is-event-flyer-modal-open {
 
 .event-flyer-modal {
     position: fixed;
-    inset: 0;
-    z-index: 200;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 .event-flyer-modal[hidden] {
     display: none !important;
 }
 
+.event-flyer-modal.is-open {
+    display: flex !important;
+}
+
 .event-flyer-modal__backdrop {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     border: none;
     padding: 0;
+    margin: 0;
     background: rgba(46, 46, 46, 0.62);
     backdrop-filter: blur(4px);
     cursor: pointer;
@@ -672,19 +688,22 @@ body.is-event-flyer-modal-open {
 .event-flyer-modal__panel {
     position: relative;
     z-index: 1;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    max-width: min(920px, 95vw);
-    max-height: min(90vh, 900px);
+    width: fit-content;
+    max-width: min(920px, 92vw);
+    max-height: 90vh;
+    margin: 0;
     animation: event-flyer-modal-in 0.35s cubic-bezier(0.48, 0, 0.12, 1);
 }
 
 .event-flyer-modal__image {
     display: block;
     width: auto;
-    max-width: 100%;
-    max-height: min(85vh, 800px);
+    height: auto;
+    max-width: min(920px, 92vw);
+    max-height: 88vh;
     border-radius: var(--radius-sm);
     object-fit: contain;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);

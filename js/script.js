@@ -15,6 +15,11 @@
         return;
     }
 
+    // Always mount on <body> so position:fixed centers in the viewport (where the user is looking)
+    if (modal.parentElement !== document.body) {
+        document.body.appendChild(modal);
+    }
+
     const closeTriggers = modal.querySelectorAll("[data-event-flyer-close]");
     const closeButton = modal.querySelector(".event-flyer-modal__close");
     let lastFocusedThumb = null;
@@ -30,12 +35,14 @@
         modalImage.alt = img.alt || thumb.getAttribute("aria-label") || "Event flyer";
 
         modal.hidden = false;
+        modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
         document.body.classList.add("is-event-flyer-modal-open");
         closeButton?.focus();
     }
 
     function closeModal() {
+        modal.classList.remove("is-open");
         modal.hidden = true;
         modal.setAttribute("aria-hidden", "true");
         modalImage.removeAttribute("src");
@@ -63,7 +70,7 @@
     });
 
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && !modal.hidden) {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
             closeModal();
         }
     });
