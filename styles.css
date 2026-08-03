@@ -689,12 +689,15 @@ body.is-event-flyer-modal-open {
     position: relative;
     z-index: 1;
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: fit-content;
-    max-width: min(920px, 92vw);
-    max-height: 90vh;
+    max-width: 94vw;
+    max-height: 96vh;
     margin: 0;
+    padding-top: 3.25rem;
+    overflow: visible;
     animation: event-flyer-modal-in 0.35s cubic-bezier(0.48, 0, 0.12, 1);
 }
 
@@ -702,8 +705,8 @@ body.is-event-flyer-modal-open {
     display: block;
     width: auto;
     height: auto;
-    max-width: min(920px, 92vw);
-    max-height: 88vh;
+    max-width: 94vw;
+    max-height: 90vh;
     border-radius: var(--radius-sm);
     object-fit: contain;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
@@ -711,18 +714,18 @@ body.is-event-flyer-modal-open {
 
 .event-flyer-modal__close {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0;
+    right: 0;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: rgba(46, 46, 46, 0.8);
+    background: rgba(46, 46, 46, 0.85);
     color: #fff;
     font-size: 1.35rem;
     line-height: 1;
@@ -1644,7 +1647,12 @@ body.is-event-flyer-modal-open {
     }
 
     .event-flyer-modal__image {
-        max-height: 75vh;
+        max-width: 96vw;
+        max-height: 82vh;
+    }
+
+    .event-flyer-modal__panel {
+        padding-top: 3rem;
     }
 
     .events-page {
