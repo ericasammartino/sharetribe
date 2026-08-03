@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ON LOT — the online lot. Find vendors, creators, and goods from the scene year-round. Everything but the balloons.">
+    <title>ON LOT — the online lot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="/" class="logo-wordmark" aria-label="ON LOT home"><img src="./assets/logo.jpg"></a>
+
+            <nav class="primary-nav" aria-label="Main">
+                <a href="#what-is-on-lot">what is on lot?</a>
+                <a href="events.html">events</a>
+                <a href="creator-spotlight.html">creator spotlight</a>
+                <a href="vendor-info.html">vendor info</a>
+                <a href="shop.html">shop</a>
+            </nav>
+
+            <div class="header-actions">
+                <form class="search-form" role="search" action="shop.html">
+                    <label class="search-form-field" for="site-search">
+                        <span class="search-form-icon" aria-hidden="true">
+                            <img src="./assets/magnifying-glass.svg" alt="magnifying glass" width="18" height="18">
+                        </span>
+                        <input id="site-search" type="search" name="q" placeholder="search">
+                    </label>
+                </form>
+
+                <a href="cart.html" class="icon-button" aria-label="Shopping cart">
+                    <img src="./assets/cart-shopping.svg" alt="shopping cart" width="28" height="24">
+                </a>
+
+                <a href="signup.html" class="text-link">Create an Account</a>
+                <a href="login.html" class="btn btn-filled-sm">Log In</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-inner">
+                <img class="hero-logo" src="assets/hero-logo.jpg" alt="ON LOT" width="720" height="280"
+                    id="hero-heading">
+                <p class="tagline">the online lot - where you can find everything but the balloons</p>
+                <a href="shop.html" class="btn btn-outline btn-hero">shop on lot</a>
+            </div>
+        </section>
+
+        <section class="card-section" id="what-is-on-lot" aria-labelledby="what-heading">
+            <div class="card what-card">
+                <h3 id="what-heading">What is on lot?</h3>
+                <p>Regretting not buying that item on lot? This marketplace helps you find and buy goods from the
+                    vendors you saw at shows, while keeping support inside the community.
+
+                    You can shop handmade gear, discover upcoming events with vendors, and get to know the artists and
+                    makers behind the work.</p>
+            </div>
+        </section>
+
+        <section class="grid-section" aria-label="Events, creators, and vendors">
+            <div class="grid-layout">
+                <div class="grid-left">
+                    <article class="card events-card">
+                        <h2>Events</h2>
+                        <p class="card-subtitle">Next up vending events</p>
+                        <div class="event-thumbs">
+                            <button type="button" class="event-thumb" data-event-thumb
+                                aria-label="Billy Strings event poster, click to expand">
+                                <img src="assets/flyer1.png" alt="">
+                                <span class="event-thumb-hint">click to expand</span>
+                            </button>
+                            <button type="button" class="event-thumb" data-event-thumb
+                                aria-label="Thankful for Yoga event poster, click to expand">
+                                <img src="assets/flyer2.png" alt="">
+                                <span class="event-thumb-hint">click to expand</span>
+                            </button>
+                            <button type="button" class="event-thumb" data-event-thumb
+                                aria-label="Wyllys event poster, click to expand">
+                                <img src="assets/flyer3.png" alt="">
+                                <span class="event-thumb-hint">click to expand</span>
+                            </button>
+                        </div>
+                        <a href="events.html" class="btn btn-filled">see all events</a>
+                    </article>
+
+                    <article class="card vendors-card">
+                        <img class="vendors-photo" src="assets/vendors-lot.jpg" alt="Outdoor market at the lot">
+                        <div class="vendors-overlay">
+                            <div class="vendors-copy">
+                                <h2>Vendors</h2>
+                                <p>interested in setting up on the lot? get more info here.</p>
+                            </div>
+                            <a href="vendor-info.html" class="btn btn-glass">vendor info</a>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="card creator-card">
+                    <img class="creator-photo" src="assets/creator-spotlight.jpg"
+                        alt="Vendor wearing colorful woven bracelets">
+                    <div class="creator-overlay">
+                        <div class="creator-copy">
+                            <h2>Creator Spotlight</h2>
+                            <p>meet the people behind the merch</p>
+                        </div>
+                        <a href="creator-spotlight.html" class="btn btn-glass">meet more creators</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="card-section shop-section" aria-labelledby="shop-heading">
+            <div class="card shop-card">
+                <div class="shop-layout">
+                    <div class="shop-intro">
+                        <h2 id="shop-heading">Shop</h2>
+                        <p>All the goods you find on lot in one place.</p>
+                    </div>
+
+                    <div class="category-grid">
+                        <a href="shop.html?category=pins" class="category-tile">
+                            <div class="category-image-well">
+                                <img src="assets/shop/pin.jpg" alt="Billy Strings pin">
+                            </div>
+                            <span class="category-label label-blue">pins</span>
+                        </a>
+                        <a href="shop.html?category=clothing" class="category-tile">
+                            <div class="category-image-well">
+                                <img src="assets/shop/clothing.jpg" alt="Graphic t-shirts on a rack">
+                            </div>
+                            <span class="category-label label-green">clothing</span>
+                        </a>
+                        <a href="shop.html?category=housewares" class="category-tile">
+                            <div class="category-image-well">
+                                <img src="assets/shop/housewares.jpg" alt="Shop interior with lamps">
+                            </div>
+                            <span class="category-label label-maroon">housewares</span>
+                        </a>
+                        <a href="shop.html?category=jewelry" class="category-tile">
+                            <div class="category-image-well">
+                                <img src="assets/shop/jewelry.jpg" alt="Earrings on display">
+                            </div>
+                            <span class="category-label label-pink">jewelry</span>
+                        </a>
+                        <a href="shop.html?category=handmade-art" class="category-tile">
+                            <div class="category-image-well">
+                                <img src="assets/shop/handmade-art.jpg" alt="Macramé wall hanging">
+                            </div>
+                            <span class="category-label label-navy">handmade art</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="shop.html" class="btn btn-outline shop-cta">come poke around</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-watermark" aria-hidden="true">ON LOT</div>
+        <div class="footer-inner">
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.253h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.75" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+                    </svg>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer-content">
+                <p class="footer-tagline">everything but the balloons</p>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="#what-is-on-lot">what is on lot?</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="events.html">events</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="creator-spotlight.html">creator spotlight</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="vendor-info.html">vendor info</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="shop.html">shop</a>
+                </nav>
+                <p class="footer-meta">
+                    <span>© 2026 ON LOT</span>
+                    <span aria-hidden="true">·</span>
+                    <a href="contact.html">Contact</a>
+                    <span aria-hidden="true">·</span>
+                    <a href="faqs.html">FAQs</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="event-flyer-modal" data-event-flyer-modal hidden aria-hidden="true">
+        <button type="button" class="event-flyer-modal__backdrop" data-event-flyer-close
+            aria-label="Close flyer preview"></button>
+        <div class="event-flyer-modal__panel" role="dialog" aria-modal="true" aria-label="Event flyer preview">
+            <button type="button" class="event-flyer-modal__close" data-event-flyer-close aria-label="Close">×</button>
+            <img class="event-flyer-modal__image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
