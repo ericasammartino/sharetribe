@@ -36,10 +36,6 @@
         "handmade-art": "handmade art",
     };
 
-    if (!resultsEl) {
-        return;
-    }
-
     function getBrowseElements() {
         return document.querySelectorAll(browseSelectors);
     }
@@ -206,7 +202,9 @@
         }
 
         if (!isActive) {
-            resultsEl.innerHTML = "";
+            if (resultsEl) {
+                resultsEl.innerHTML = "";
+            }
             setResultsMode(false);
             if (!isShopPage) {
                 setStatus("Enter a search term above.");
@@ -217,12 +215,18 @@
         setResultsMode(true);
 
         if (!hits.length) {
-            resultsEl.innerHTML = "";
+            if (resultsEl) {
+                resultsEl.innerHTML = "";
+            }
             setStatus("No products found. Try adjusting your filters or search.");
             return;
         }
 
         setStatus(`${hits.length} result${hits.length === 1 ? "" : "s"}`);
+
+        if (!resultsEl) {
+            return;
+        }
 
         resultsEl.innerHTML = hits
             .map((hit) => {
@@ -260,14 +264,18 @@
         if (!config || !config.apiKey || !config.host) {
             setResultsMode(true);
             setStatus("Search config missing. Create config/typesense.public.js with your search-only API key.");
-            resultsEl.innerHTML = "";
+            if (resultsEl) {
+                resultsEl.innerHTML = "";
+            }
             return;
         }
 
         if (config.apiKey.includes("your_search_only")) {
             setResultsMode(true);
             setStatus("Replace the placeholder API key in config/typesense.public.js.");
-            resultsEl.innerHTML = "";
+            if (resultsEl) {
+                resultsEl.innerHTML = "";
+            }
             return;
         }
 
@@ -315,8 +323,22 @@
         } catch (error) {
             console.error("Typesense search error:", error);
             setStatus(`Search failed: ${error.message || error}`);
-            resultsEl.innerHTML = "";
+            if (resultsEl) {
+                resultsEl.innerHTML = "";
+            }
         }
+    }
+
+    function bindFilterPanel() {
+        if (!filterToggle || !filterPanel) {
+            return;
+        }
+
+        filterToggle.addEventListener("click", () => {
+            const isOpen = filterToggle.getAttribute("aria-expanded") === "true";
+            filterToggle.setAttribute("aria-expanded", String(!isOpen));
+            filterPanel.hidden = isOpen;
+        });
     }
 
     function refreshFromState(sourceForm) {
@@ -366,17 +388,13 @@
         });
     }
 
-    if (filterToggle && filterPanel) {
-        filterToggle.addEventListener("click", () => {
-            const isOpen = filterToggle.getAttribute("aria-expanded") === "true";
-            filterToggle.setAttribute("aria-expanded", String(!isOpen));
-            filterPanel.hidden = isOpen;
-        });
-    }
+    bindFilterPanel();
 
-    const initialFilters = readFiltersFromUrl();
-    applyFiltersToForm(initialFilters.categories, initialFilters.band);
-    const initialQuery = readSearchQuery();
-    syncInputs(initialQuery);
-    runSearch(initialQuery, initialFilters.categories, initialFilters.band);
+    if (resultsEl || isShopPage) {
+        const initialFilters = readFiltersFromUrl();
+        applyFiltersToForm(initialFilters.categories, initialFilters.band);
+        const initialQuery = readSearchQuery();
+        syncInputs(initialQuery);
+        runSearch(initialQuery, initialFilters.categories, initialFilters.band);
+    }
 })();
