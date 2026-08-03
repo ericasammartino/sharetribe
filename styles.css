@@ -1451,13 +1451,15 @@ body.is-event-flyer-modal-open {
     line-height: 1.3;
 }
 
-.shop-filters-categories {
+.shop-filters-categories,
+.shop-filters-bands {
     margin: 0;
     padding: 0;
     border: none;
 }
 
-.shop-filters-categories .shop-filters-label {
+.shop-filters-categories .shop-filters-label,
+.shop-filters-bands .shop-filters-label {
     margin-bottom: 0.65rem;
 }
 

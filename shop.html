@@ -79,18 +79,31 @@
 
                 <div id="shop-filters" class="shop-filters" hidden>
                     <form class="shop-filters-form" data-shop-filter-form>
-                        <div class="shop-filters-field">
-                            <label class="shop-filters-label" for="shop-filter-band">Band</label>
-                            <select id="shop-filter-band" class="shop-filters-select" name="band"
-                                data-shop-filter-band>
-                                <option value="">All bands</option>
-                                <option value="billy-strings">Billy Strings</option>
-                                <option value="phish">Phish</option>
-                                <option value="grateful-dead">Grateful Dead</option>
-                                <option value="widespread-panic">Widespread Panic</option>
-                                <option value="goose">Goose</option>
-                            </select>
-                        </div>
+                        <fieldset class="shop-filters-bands">
+                            <legend class="shop-filters-label">Band</legend>
+                            <div class="shop-filters-checkboxes">
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="band" value="billy-strings" data-shop-filter-band>
+                                    <span>Billy Strings</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="band" value="phish" data-shop-filter-band>
+                                    <span>Phish</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="band" value="grateful-dead" data-shop-filter-band>
+                                    <span>Grateful Dead</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="band" value="widespread-panic" data-shop-filter-band>
+                                    <span>Widespread Panic</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="band" value="goose" data-shop-filter-band>
+                                    <span>Goose</span>
+                                </label>
+                            </div>
+                        </fieldset>
 
                         <fieldset class="shop-filters-categories">
                             <legend class="shop-filters-label">Category</legend>

@@ -15,7 +15,7 @@
     const filterPanel = document.getElementById("shop-filters");
     const filterToggle = document.querySelector(".shop-filter-btn");
     const filterClearBtn = document.querySelector("[data-shop-filter-clear]");
-    const bandSelect = document.querySelector("[data-shop-filter-band]");
+    const bandInputs = document.querySelectorAll("[data-shop-filter-band]");
     const categoryInputs = document.querySelectorAll("[data-shop-filter-category]");
 
     const browseSelectors = "main.shop-page .shop-sections";
@@ -98,28 +98,30 @@
             .map((input) => input.value);
     }
 
-    function readSelectedBand() {
-        return bandSelect ? bandSelect.value.trim() : "";
+    function readSelectedBands() {
+        return Array.from(bandInputs)
+            .filter((input) => input.checked)
+            .map((input) => input.value);
     }
 
-    function applyFiltersToForm(categories, band) {
+    function applyFiltersToForm(categories, bands) {
         categoryInputs.forEach((input) => {
             input.checked = categories.includes(input.value);
         });
 
-        if (bandSelect) {
-            bandSelect.value = band;
-        }
+        bandInputs.forEach((input) => {
+            input.checked = bands.includes(input.value);
+        });
     }
 
     function readFiltersFromUrl() {
         const params = new URLSearchParams(window.location.search);
         const categories = params.getAll("category").filter(Boolean);
-        const band = params.get("band") || "";
-        return { categories, band };
+        const bands = params.getAll("band").filter(Boolean);
+        return { categories, bands };
     }
 
-    function writeUrl(query, categories, band) {
+    function writeUrl(query, categories, bands) {
         const url = new URL(window.location.href);
         url.search = "";
 
@@ -131,14 +133,14 @@
             url.searchParams.append("category", category);
         });
 
-        if (band) {
-            url.searchParams.set("band", band);
-        }
+        bands.forEach((band) => {
+            url.searchParams.append("band", band);
+        });
 
         window.history.replaceState({}, "", url);
     }
 
-    function buildFilterBy(categories, band) {
+    function buildFilterBy(categories, bands) {
         const parts = [];
 
         if (categories.length) {
@@ -148,8 +150,11 @@
             parts.push(`(${categoryFilter})`);
         }
 
-        if (band) {
-            parts.push(`band:=${band}`);
+        if (bands.length) {
+            const bandFilter = bands
+                .map((band) => `band:=${band}`)
+                .join(" || ");
+            parts.push(`(${bandFilter})`);
         }
 
         return parts.join(" && ");
@@ -162,15 +167,19 @@
         return `$${value.toFixed(value % 1 === 0 ? 0 : 2)}`;
     }
 
-    function buildResultsTitle(query, categories, band) {
+    function buildResultsTitle(query, categories, bands) {
         if (!isShopPage) {
             return query ? `Results for “${query}”` : "Search";
         }
 
         const parts = [];
 
-        if (band && BAND_LABELS[band]) {
-            parts.push(BAND_LABELS[band]);
+        if (bands.length) {
+            parts.push(
+                bands
+                    .map((band) => BAND_LABELS[band] || band)
+                    .join(", ")
+            );
         }
 
         if (categories.length) {
@@ -192,13 +201,13 @@
         return `Shop — ${parts.join(" · ")}`;
     }
 
-    function renderResults(hits, query, categories, band) {
+    function renderResults(hits, query, categories, bands) {
         const trimmed = (query || "").trim();
-        const hasFilters = categories.length > 0 || Boolean(band);
+        const hasFilters = categories.length > 0 || bands.length > 0;
         const isActive = Boolean(trimmed) || hasFilters;
 
         if (titleEl) {
-            titleEl.textContent = buildResultsTitle(trimmed, categories, band);
+            titleEl.textContent = buildResultsTitle(trimmed, categories, bands);
         }
 
         if (!isActive) {
@@ -252,9 +261,9 @@
             .join("");
     }
 
-    async function runSearch(query, categories, band) {
+    async function runSearch(query, categories, bands) {
         const trimmed = (query || "").trim();
-        const hasFilters = categories.length > 0 || Boolean(band);
+        const hasFilters = categories.length > 0 || bands.length > 0;
 
         if (!trimmed && !hasFilters) {
             renderResults([], "", [], "");
@@ -308,7 +317,7 @@
             typo_tokens_threshold: 0,
         };
 
-        const filterBy = buildFilterBy(categories, band);
+        const filterBy = buildFilterBy(categories, bands);
         if (filterBy) {
             searchParams.filter_by = filterBy;
         }
@@ -319,7 +328,7 @@
                 .documents()
                 .search(searchParams);
 
-            renderResults(result.hits || [], trimmed, categories, band);
+            renderResults(result.hits || [], trimmed, categories, bands);
         } catch (error) {
             console.error("Typesense search error:", error);
             setStatus(`Search failed: ${error.message || error}`);
@@ -344,10 +353,10 @@
     function refreshFromState(sourceForm) {
         const query = readSearchQuery(sourceForm);
         const categories = readSelectedCategories();
-        const band = readSelectedBand();
+        const bands = readSelectedBands();
         syncInputs(query);
-        writeUrl(query, categories, band);
-        runSearch(query, categories, band);
+        writeUrl(query, categories, bands);
+        runSearch(query, categories, bands);
     }
 
     function bindSearchForm(form) {
@@ -381,10 +390,10 @@
 
     if (filterClearBtn) {
         filterClearBtn.addEventListener("click", () => {
-            applyFiltersToForm([], "");
+            applyFiltersToForm([], []);
             syncInputs("");
-            writeUrl("", [], "");
-            runSearch("", [], "");
+            writeUrl("", [], []);
+            runSearch("", [], []);
         });
     }
 
@@ -392,9 +401,9 @@
 
     if (resultsEl || isShopPage) {
         const initialFilters = readFiltersFromUrl();
-        applyFiltersToForm(initialFilters.categories, initialFilters.band);
+        applyFiltersToForm(initialFilters.categories, initialFilters.bands);
         const initialQuery = readSearchQuery();
         syncInputs(initialQuery);
-        runSearch(initialQuery, initialFilters.categories, initialFilters.band);
+        runSearch(initialQuery, initialFilters.categories, initialFilters.bands);
     }
 })();
