@@ -44,6 +44,7 @@ const schema = {
         { name: "vendor", type: "string" },
         { name: "description", type: "string", optional: true },
         { name: "category", type: "string", facet: true, optional: true },
+        { name: "band", type: "string", facet: true, optional: true },
         { name: "slug", type: "string", optional: true },
         { name: "image", type: "string", optional: true },
         { name: "price", type: "float" },
