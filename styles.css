@@ -1686,6 +1686,18 @@ body.is-event-flyer-modal-open {
         font-size: 0.8rem;
     }
 
+    .event-row-details {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .event-row-flyer.event-thumb {
+        width: min(100%, 200px);
+        height: auto;
+        aspect-ratio: 3 / 4;
+        align-self: center;
+    }
+
     .creator-spotlight-page {
         padding: 2rem 1.25rem 3rem;
     }

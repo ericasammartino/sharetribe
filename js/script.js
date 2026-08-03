@@ -1,5 +1,5 @@
 /**
- * ON LOT — event flyer popup modal (v2 — not inline .event-expanded)
+ * ON LOT — event flyer popup modal (homepage + events page)
  */
 (function () {
     const modal = document.querySelector("[data-event-flyer-modal]");
