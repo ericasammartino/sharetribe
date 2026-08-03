@@ -1,10 +1,15 @@
 /**
- * ON LOT — homepage event flyer popup modal
+ * ON LOT — event flyer popup modal (v2 — not inline .event-expanded)
  */
 (function () {
     const modal = document.querySelector("[data-event-flyer-modal]");
     const modalImage = modal?.querySelector(".event-flyer-modal__image");
     const thumbs = document.querySelectorAll("[data-event-thumb]");
+
+    // Legacy inline expand lived inside .events-card — remove so only the modal is used
+    document.querySelectorAll(".events-card .event-expanded").forEach((el) => {
+        el.remove();
+    });
 
     if (!modal || !modalImage || !thumbs.length) {
         return;
@@ -16,12 +21,12 @@
 
     function openModal(thumb) {
         const img = thumb.querySelector("img");
-        if (!img) {
+        if (!img?.src) {
             return;
         }
 
         lastFocusedThumb = thumb;
-        modalImage.src = img.src;
+        modalImage.src = img.currentSrc || img.src;
         modalImage.alt = img.alt || thumb.getAttribute("aria-label") || "Event flyer";
 
         modal.hidden = false;
@@ -44,13 +49,15 @@
     }
 
     thumbs.forEach((thumb) => {
-        thumb.addEventListener("click", () => {
+        thumb.addEventListener("click", (event) => {
+            event.preventDefault();
             openModal(thumb);
         });
     });
 
     closeTriggers.forEach((trigger) => {
-        trigger.addEventListener("click", () => {
+        trigger.addEventListener("click", (event) => {
+            event.preventDefault();
             closeModal();
         });
     });
