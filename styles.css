@@ -1144,20 +1144,25 @@ body.is-event-flyer-modal-open {
     margin-top: 0.5rem;
 }
 
-/* Footer */
+/* Footer — centered watermark + right content panel (Figma) */
 
 .site-footer {
     position: relative;
     overflow: hidden;
-    padding: 5rem 1.5rem 3rem;
+    padding: 4.5rem 1.5rem 2.5rem;
+    min-height: 10.5rem;
     border-top: 1px solid var(--border);
     background: var(--page);
+    isolation: isolate;
 }
 
 .footer-watermark {
     position: absolute;
-    inset: auto 0 0;
+    left: 50%;
+    bottom: 0;
     z-index: 0;
+    width: min(100%, 56rem);
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -1168,19 +1173,24 @@ body.is-event-flyer-modal-open {
 
 .footer-watermark img {
     display: block;
-    width: min(92vw, 56rem);
+    width: 100%;
+    max-width: 56rem;
     height: auto;
-    max-width: none;
-    opacity: 0.07;
+    max-height: clamp(7rem, 20vw, 11.5rem);
+    object-fit: contain;
+    object-position: center bottom;
+    opacity: 0.06;
 }
 
 .footer-inner {
     position: relative;
     z-index: 1;
+    width: 100%;
     max-width: var(--header-max-width);
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .footer-panel {
@@ -1189,6 +1199,7 @@ body.is-event-flyer-modal-open {
     align-items: center;
     gap: 0.85rem;
     max-width: 28rem;
+    margin-left: auto;
 }
 
 .footer-social {
@@ -1300,7 +1311,8 @@ body.is-event-flyer-modal-open {
     }
 
     .footer-watermark img {
-        width: min(100%, 40rem);
+        max-height: 8rem;
+        max-width: min(100%, 32rem);
     }
 
     .shop-card {
@@ -1392,6 +1404,7 @@ body.is-event-flyer-modal-open {
     }
 
     .footer-watermark img {
-        width: min(100%, 28rem);
+        max-height: 6.5rem;
+        max-width: min(100%, 24rem);
     }
 }
