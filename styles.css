@@ -818,17 +818,17 @@ body.is-event-flyer-modal-open {
 /* Events page */
 
 .events-page {
-    max-width: var(--max-width);
+    max-width: var(--header-max-width);
     margin: 0 auto;
-    padding: 3rem 1.5rem 4rem;
+    padding: 3.5rem 1.5rem 4rem;
 }
 
 .events-page-title {
-    margin: 0 0 2.5rem;
-    text-align: center;
-    font-size: clamp(2.5rem, 5vw, var(--h1));
+    margin: 0 0 3rem;
+    text-align: left;
+    font-size: clamp(2.25rem, 4.5vw, 3.25rem);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.05;
 }
 
 .events-list {
