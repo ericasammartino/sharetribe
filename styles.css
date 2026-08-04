@@ -507,6 +507,21 @@ p {
     border-radius: var(--radius-sm);
 }
 
+/* Events page flyers — 244px height (homepage thumbs unchanged) */
+
+.events-page .event-flyer-thumb.event-thumb {
+    width: auto;
+    height: 244px;
+    max-width: none;
+}
+
+.events-page .event-flyer-thumb.event-thumb img {
+    width: auto;
+    height: 244px;
+    max-width: none;
+    object-fit: contain;
+}
+
 /* Event flyer popup modal — fixed overlay centered in the viewport */
 
 body.is-event-flyer-modal-open {
@@ -1371,9 +1386,14 @@ body.is-event-flyer-modal-open {
         gap: 0.5rem;
     }
 
-    .event-thumb {
+    .event-thumbs .event-thumb {
         height: 120px;
         width: 90px;
+    }
+
+    .events-page .event-flyer-thumb.event-thumb,
+    .events-page .event-flyer-thumb.event-thumb img {
+        height: 200px;
     }
 
     .event-row-details.card.what-card {
