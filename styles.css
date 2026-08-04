@@ -1161,7 +1161,7 @@ body.is-event-flyer-modal-open {
     left: 50%;
     bottom: 0;
     z-index: 0;
-    width: min(100%, 56rem);
+    width: min(100%, 72rem);
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
@@ -1174,9 +1174,9 @@ body.is-event-flyer-modal-open {
 .footer-watermark img {
     display: block;
     width: 100%;
-    max-width: 56rem;
+    max-width: 72rem;
     height: auto;
-    max-height: clamp(7rem, 20vw, 11.5rem);
+    max-height: clamp(10rem, 32vw, 18rem);
     object-fit: contain;
     object-position: center bottom;
     opacity: 0.06;
@@ -1311,8 +1311,8 @@ body.is-event-flyer-modal-open {
     }
 
     .footer-watermark img {
-        max-height: 8rem;
-        max-width: min(100%, 32rem);
+        max-height: 11rem;
+        max-width: min(100%, 40rem);
     }
 
     .shop-card {
@@ -1404,7 +1404,7 @@ body.is-event-flyer-modal-open {
     }
 
     .footer-watermark img {
-        max-height: 6.5rem;
-        max-width: min(100%, 24rem);
+        max-height: 9rem;
+        max-width: min(100%, 30rem);
     }
 }
