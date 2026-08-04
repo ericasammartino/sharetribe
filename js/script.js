@@ -75,3 +75,67 @@
         }
     });
 })();
+
+/**
+ * ON LOT — anchor scroll offset for sticky header (what is on lot? link)
+ */
+(function () {
+    const HASH = "what-is-on-lot";
+
+    function getScrollOffset() {
+        const header = document.querySelector(".site-header");
+        return (header?.offsetHeight ?? 0) + 16;
+    }
+
+    function isIndexPage(pathname) {
+        return (
+            pathname === "" ||
+            pathname === "/" ||
+            pathname.endsWith("/index.html")
+        );
+    }
+
+    function scrollToTarget(behavior = "smooth") {
+        const target = document.getElementById(HASH);
+        if (!target) {
+            return;
+        }
+
+        const top = target.getBoundingClientRect().top + window.scrollY - getScrollOffset();
+        window.scrollTo({ top: Math.max(0, top), behavior });
+    }
+
+    document.addEventListener("click", (event) => {
+        const link = event.target.closest("a[href]");
+        if (!link) {
+            return;
+        }
+
+        const url = new URL(link.href, window.location.href);
+        if (url.hash !== `#${HASH}` || !isIndexPage(url.pathname)) {
+            return;
+        }
+
+        if (!isIndexPage(window.location.pathname)) {
+            return;
+        }
+
+        event.preventDefault();
+        history.pushState(null, "", `#${HASH}`);
+        scrollToTarget();
+    });
+
+    function handleInitialHash() {
+        if (window.location.hash !== `#${HASH}`) {
+            return;
+        }
+
+        scrollToTarget("auto");
+    }
+
+    if (document.readyState === "complete") {
+        handleInitialHash();
+    } else {
+        window.addEventListener("load", handleInitialHash);
+    }
+})();
