@@ -1147,38 +1147,46 @@ body.is-event-flyer-modal-open {
 /* Footer */
 
 .site-footer {
-    padding: 2.5rem 1.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 1.5rem 3rem;
     border-top: 1px solid var(--border);
     background: var(--page);
 }
 
-.footer-inner {
-    max-width: var(--header-max-width);
-    margin: 0 auto;
+.footer-watermark {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 0;
     display: flex;
+    justify-content: center;
     align-items: flex-end;
-    justify-content: space-between;
-    gap: 2rem 3rem;
-}
-
-.footer-brand {
-    flex: 1 1 auto;
-    min-width: 0;
+    pointer-events: none;
+    user-select: none;
     line-height: 0;
 }
 
-.footer-brand img {
+.footer-watermark img {
     display: block;
-    width: min(100%, 42rem);
+    width: min(92vw, 56rem);
     height: auto;
     max-width: none;
+    opacity: 0.07;
+}
+
+.footer-inner {
+    position: relative;
+    z-index: 1;
+    max-width: var(--header-max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .footer-panel {
-    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 0.85rem;
     max-width: 28rem;
 }
@@ -1186,6 +1194,7 @@ body.is-event-flyer-modal-open {
 .footer-social {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.65rem;
 }
 
@@ -1211,7 +1220,7 @@ body.is-event-flyer-modal-open {
 }
 
 .footer-content {
-    text-align: right;
+    text-align: center;
 }
 
 .footer-tagline {
@@ -1226,7 +1235,7 @@ body.is-event-flyer-modal-open {
 .footer-meta {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 0.35rem 0.55rem;
     margin: 0;
@@ -1288,6 +1297,10 @@ body.is-event-flyer-modal-open {
 
     .creator-card {
         min-height: 420px;
+    }
+
+    .footer-watermark img {
+        width: min(100%, 40rem);
     }
 
     .shop-card {
@@ -1370,33 +1383,15 @@ body.is-event-flyer-modal-open {
     }
 
     .footer-inner {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .footer-brand {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-brand img {
-        width: min(100%, 20rem);
-        margin: 0 auto;
+        justify-content: center;
     }
 
     .footer-panel {
-        align-items: center;
         max-width: none;
         width: 100%;
     }
 
-    .footer-content {
-        text-align: center;
-    }
-
-    .footer-nav,
-    .footer-meta {
-        justify-content: center;
+    .footer-watermark img {
+        width: min(100%, 28rem);
     }
 }
