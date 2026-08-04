@@ -62,89 +62,76 @@
                         <img src="./assets/angle-down.svg">
                     </span>
                 </summary>
-                <div class="event-row-details card what-card">
-                    <div class="event-row-details-layout">
-                        <div class="event-row-details-flyer">
-                            <p class="event-detail-meta">
-                                <span class="event-detail-date">7/17</span>
-                                <span class="event-detail-sep" aria-hidden="true">&bull;</span>
-                                <span class="event-detail-city">Raleigh, NC</span>
-                            </p>
+                <div class="event-row-details event-show-strip" data-event-show-strip>
+                    <div class="event-show-card is-closed" data-event-show-card>
+                        <div class="event-show-flyer">
                             <button type="button" class="event-thumb event-flyer-thumb" data-event-thumb
-                                aria-label="Billy Strings event poster, click to expand">
-                                <img src="./assets/flyer1.png" alt="">
+                                data-event-show-flyer-btn aria-label="7/17 Raleigh, NC event poster, click to expand">
+                                <img src="./assets/flyer1.png" alt="" data-event-show-flyer-img>
                                 <span class="event-thumb-hint">click to expand</span>
                             </button>
                         </div>
-                        <div class="event-row-details-right">
-                            <h3 class="event-vendors-heading">Vendors</h3>
-                            <div class="event-vendors">
-                            <div class="vendors-left">
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <br>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                            </div>
-                            <div class="vendors-right">
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <br>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                            </div>
-                            </div>
+                        <div class="event-show-vendors" data-event-show-vendors hidden>
+                            <h3 class="event-show-vendors-title">Vendors</h3>
+                            <ul class="event-show-vendor-list" data-event-show-vendor-list></ul>
                         </div>
+                        <button type="button" class="event-show-spine" data-event-show-spine
+                            aria-expanded="false" aria-label="7/17 Raleigh, NC — toggle vendors">
+                            <span data-event-show-spine-text>7/17 Raleigh, NC</span>
+                        </button>
                     </div>
-                </div>
-                <div class="event-row-details card what-card">
-                    <div class="event-row-details-layout">
-                        <div class="event-row-details-flyer">
-                            <p class="event-detail-meta">
-                                <span class="event-detail-date">7/18 &amp; 19</span>
-                                <span class="event-detail-sep" aria-hidden="true">&bull;</span>
-                                <span class="event-detail-city">Columbia, MD</span>
-                            </p>
-                            <button type="button" class="event-thumb event-flyer-thumb" data-event-thumb
-                                aria-label="Billy Strings event poster, click to expand">
-                                <img src="./assets/flyer1.png" alt="">
-                                <span class="event-thumb-hint">click to expand</span>
-                            </button>
+                    <div class="event-show-tabs" role="tablist" data-event-show-tabs
+                        aria-label="Billy Strings tour dates"></div>
+
+                    <div class="event-show-data" hidden>
+                        <div data-show-panel="raleigh" data-date="7/17" data-city="Raleigh, NC"
+                            data-flyer="./assets/flyer1.png" data-label="7/17 Raleigh, NC">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Dyer on the Mountain</a></li>
+                                <li><span>Endl Designs</span></li>
+                                <li><a href="#">Grey Locke</a></li>
+                                <li><span>Lucy's Pins</span></li>
+                                <li><a href="#">Lot Apparel Co</a></li>
+                                <li><span>Gemma's Gems</span></li>
+                                <li><a href="#">Handmade on Lot</a></li>
+                                <li><span>Ice Cold Hatties</span></li>
+                            </ul>
                         </div>
-                        <div class="event-row-details-right">
-                            <h3 class="event-vendors-heading">Vendors</h3>
-                            <div class="event-vendors">
-                            <div class="vendors-left">
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <br>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                            </div>
-                            <div class="vendors-right">
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                                <p>Vendor Name</p>
-                                <a href="">Vendor Name</a>
-                                <br>
-                                <a href="">Vendor Name</a>
-                                <p>Vendor Name</p>
-                            </div>
-                            </div>
+                        <div data-show-panel="columbia-718" data-date="7/18" data-city="Columbia, MD"
+                            data-flyer="./assets/flyer1.png" data-label="7/18 Columbia, MD">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                            </ul>
+                        </div>
+                        <div data-show-panel="columbia-719" data-date="7/19" data-city="Columbia, MD"
+                            data-flyer="./assets/flyer1.png" data-label="7/19 Columbia, MD">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                            </ul>
+                        </div>
+                        <div data-show-panel="pittsburgh" data-date="7/22" data-city="Pittsburgh, PA"
+                            data-flyer="./assets/flyer1.png" data-label="7/22 Pittsburgh, PA">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                            </ul>
+                        </div>
+                        <div data-show-panel="cincinnati" data-date="7/24" data-city="Cincinnati, OH"
+                            data-flyer="./assets/flyer1.png" data-label="7/24 Cincinnati, OH">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -272,6 +259,7 @@
         </div>
     </div>
 
+    <script src="js/event-shows.js" defer></script>
     <script src="js/script.js" defer></script>
 </body>
 
