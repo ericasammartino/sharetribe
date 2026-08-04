@@ -953,7 +953,7 @@ body.is-event-flyer-modal-open {
 .event-row-details-right {
     flex: 1;
     min-width: 0;
-    padding-top: 0.1rem;
+    padding-top: 1.8rem;
 }
 
 .event-vendors-heading,
@@ -1424,13 +1424,21 @@ body.is-event-flyer-modal-open {
     }
 
     .event-row-details.card.what-card {
-        flex-direction: column;
         padding: 1.25rem;
     }
 
     .event-row-details-layout {
         flex-direction: column;
         gap: 1.25rem;
+    }
+
+    .event-row-details-flyer {
+        width: 100%;
+        max-width: 12rem;
+    }
+
+    .event-row-details-right {
+        padding-top: 0;
     }
 
     .event-vendors {
