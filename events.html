@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ON LOT events — find tour dates and shows where your favorite vendors will be on lot.">
+    <title>Events — ON LOT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-wordmark" aria-label="ON LOT home"><img src="./assets/group.png"
+                    alt="ON LOT"></a>
+
+            <nav class="primary-nav" aria-label="Main">
+                <a href="index.html#what-is-on-lot">what is on lot?</a>
+                <a href="events.html" aria-current="page">events</a>
+                <a href="creator-spotlight.html">creator spotlight</a>
+                <a href="vendor-info.html">vendor info</a>
+                <a href="shop.html">shop</a>
+            </nav>
+
+            <div class="header-actions">
+                <form class="search-form" role="search" action="shop.html">
+                    <label class="search-form-field" for="site-search">
+                        <span class="search-form-icon" aria-hidden="true">
+                            <img src="./assets/magnifying-glass.svg" alt="" width="18" height="18">
+                        </span>
+                        <input id="site-search" type="search" name="q" placeholder="search">
+                    </label>
+                </form>
+
+                <a href="cart.html" class="icon-button" aria-label="Shopping cart">
+                    <img src="./assets/cart-shopping.svg" alt="" width="28" height="24">
+                </a>
+
+                <a href="signup.html" class="text-link">Create an Account</a>
+                <a href="login.html" class="btn btn-outline">Log In</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="events-page">
+        <h1 class="events-page-title">Events</h1>
+
+        <div class="events-list">
+            <details class="event-row">
+                <summary class="event-row-summary">
+                    <div class="event-row-info">
+                        <h2 class="event-name">Billy Strings</h2>
+                        <p class="event-dates">7/17 &bull; Raleigh, NC &nbsp; 7/18 &amp; 19 &bull; Columbia, MD
+                            &nbsp; 7/22 &bull; Pittsburgh, PA &nbsp; 7/24 &bull; Cincinnati, OH</p>
+                    </div>
+                    <span class="event-chevron" aria-hidden="true">
+                        <img src="./assets/angle-down.svg">
+                    </span>
+                </summary>
+                <div class="event-row-details event-show-strip" data-event-show-strip>
+                    <div class="event-show-card is-closed" data-event-show-card>
+                        <div class="event-show-flyer">
+                            <button type="button" class="event-thumb event-flyer-thumb" data-event-thumb
+                                data-event-show-flyer-btn aria-label="7/17 Raleigh, NC event poster, click to expand">
+                                <img src="./assets/flyer1.png" alt="" data-event-show-flyer-img>
+                                <span class="event-thumb-hint">click to expand</span>
+                            </button>
+                        </div>
+                        <div class="event-show-vendors" data-event-show-vendors hidden>
+                            <h3 class="event-show-vendors-title">Vendors</h3>
+                            <ul class="event-show-vendor-list" data-event-show-vendor-list></ul>
+                        </div>
+                        <button type="button" class="event-show-spine" data-event-show-spine
+                            aria-expanded="false" aria-label="7/17 Raleigh, NC — toggle vendors">
+                            <span data-event-show-spine-text>7/17 Raleigh, NC</span>
+                        </button>
+                    </div>
+                    <div class="event-show-tabs" role="tablist" data-event-show-tabs
+                        aria-label="Billy Strings tour dates"></div>
+
+                    <div class="event-show-data" hidden>
+                        <div data-show-panel="raleigh" data-date="7/17" data-city="Raleigh, NC"
+                            data-flyer="./assets/flyer1.png" data-label="7/17 Raleigh, NC">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Dyer on the Mountain</a></li>
+                                <li><span>Endl Designs</span></li>
+                                <li><a href="#">Grey Locke</a></li>
+                                <li><span>Lucy's Pins</span></li>
+                                <li><a href="#">Lot Apparel Co</a></li>
+                                <li><span>Gemma's Gems</span></li>
+                                <li><a href="#">Handmade on Lot</a></li>
+                                <li><span>Ice Cold Hatties</span></li>
+                            </ul>
+                        </div>
+                        <div data-show-panel="columbia-718" data-date="7/18" data-city="Columbia, MD"
+                            data-flyer="./assets/flyer1.png" data-label="7/18 Columbia, MD">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                            </ul>
+                        </div>
+                        <div data-show-panel="columbia-719" data-date="7/19" data-city="Columbia, MD"
+                            data-flyer="./assets/flyer1.png" data-label="7/19 Columbia, MD">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                            </ul>
+                        </div>
+                        <div data-show-panel="pittsburgh" data-date="7/22" data-city="Pittsburgh, PA"
+                            data-flyer="./assets/flyer1.png" data-label="7/22 Pittsburgh, PA">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                            </ul>
+                        </div>
+                        <div data-show-panel="cincinnati" data-date="7/24" data-city="Cincinnati, OH"
+                            data-flyer="./assets/flyer1.png" data-label="7/24 Cincinnati, OH">
+                            <ul class="event-show-vendor-list">
+                                <li><a href="#">Vendor Name</a></li>
+                                <li><span>Vendor Name</span></li>
+                                <li><a href="#">Vendor Name</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="event-row">
+                <summary class="event-row-summary">
+                    <div class="event-row-info">
+                        <h2 class="event-name">Phish</h2>
+                        <p class="event-dates">7/26 &bull; Saratoga Springs, NY &nbsp; 7/27 &bull; Saratoga Springs, NY
+                            &nbsp; 8/2 &bull; Highland Park, IL</p>
+                    </div>
+                    <span class="event-chevron" aria-hidden="true">
+                        <img src="./assets/angle-down.svg">
+                    </span>
+                </summary>
+                <div class="event-row-details">
+                    <p class="event-detail-meta">
+                        <span class="event-detail-date">7/26</span>
+                        <span class="event-detail-sep" aria-hidden="true">&bull;</span>
+                        <span class="event-detail-city">Saratoga Springs, NY</span>
+                    </p>
+                    <p>Lot opens early. Expect apparel, glass, and lot favorites from the usual crew.</p>
+                </div>
+            </details>
+
+            <details class="event-row">
+                <summary class="event-row-summary">
+                    <div class="event-row-info">
+                        <h2 class="event-name">Widespread Panic</h2>
+                        <p class="event-dates">8/8 &bull; Morrison, CO &nbsp; 8/9 &bull; Morrison, CO &nbsp; 8/15
+                            &bull; Atlanta, GA</p>
+                    </div>
+                    <span class="event-chevron" aria-hidden="true">
+                        <img src="./assets/angle-down.svg">
+                    </span>
+                </summary>
+                <div class="event-row-details">
+                    <p class="event-detail-meta">
+                        <span class="event-detail-date">8/8</span>
+                        <span class="event-detail-sep" aria-hidden="true">&bull;</span>
+                        <span class="event-detail-city">Morrison, CO</span>
+                    </p>
+                    <p>Red Rocks and summer sheds — posters, pins, and handmade goods from vendors who travel the
+                        circuit.
+                    </p>
+                </div>
+            </details>
+
+            <details class="event-row">
+                <summary class="event-row-summary">
+                    <div class="event-row-info">
+                        <h2 class="event-name">Goose</h2>
+                        <p class="event-dates">8/21 &bull; Arrington, VA &nbsp; 8/22 &bull; Arrington, VA &nbsp; 8/29
+                            &bull; St. Augustine, FL</p>
+                    </div>
+                    <span class="event-chevron" aria-hidden="true">
+                        <img src="./assets/angle-down.svg">
+                    </span>
+                </summary>
+                <div class="event-row-details">
+                    <p class="event-detail-meta">
+                        <span class="event-detail-date">8/21</span>
+                        <span class="event-detail-sep" aria-hidden="true">&bull;</span>
+                        <span class="event-detail-city">Arrington, VA</span>
+                    </p>
+                    <p>Festival season stops with a growing lot scene — art, apparel, and small-batch makers.</p>
+                </div>
+            </details>
+        </div>
+
+        <a href="submit-event.html" class="btn btn-filled events-submit-btn">submit an event</a>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-watermark" aria-hidden="true">
+            <img src="./assets/Group 1.png" alt="">
+        </div>
+
+        <div class="footer-inner">
+            <div class="footer-panel">
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <img src="./assets/facebook.svg" alt="">
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img src="./assets/instagram.svg" alt="">
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <img src="./assets/tiktok.svg" alt="">
+                    </a>
+                </div>
+
+                <div class="footer-content">
+                    <p class="footer-tagline">everything but the balloons</p>
+                    <nav class="footer-nav" aria-label="Footer">
+                        <a href="index.html#what-is-on-lot">what is on lot?</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="events.html">events</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="creator-spotlight.html">creator spotlight</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="vendor-info.html">vendor info</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="shop.html">shop</a>
+                    </nav>
+                    <p class="footer-meta">
+                        <span>&copy; 2026 ON LOT</span>
+                        <span aria-hidden="true">·</span>
+                        <a href="contact.html">Contact</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="faqs.html">FAQs</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="event-flyer-modal" data-event-flyer-modal hidden aria-hidden="true">
+        <button type="button" class="event-flyer-modal__backdrop" data-event-flyer-close
+            aria-label="Close flyer preview"></button>
+        <div class="event-flyer-modal__panel" role="dialog" aria-modal="true" aria-label="Event flyer preview">
+            <button type="button" class="event-flyer-modal__close" data-event-flyer-close aria-label="Close">×</button>
+            <img class="event-flyer-modal__image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="js/event-shows.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
