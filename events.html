@@ -64,7 +64,11 @@
                 </summary>
                 <div class="event-row-details card what-card">
                     <div class="event-row details-left">
-                        <img src="./assets/flyer1.png">
+                        <button type="button" class="event-thumb event-flyer-thumb" data-event-thumb
+                            aria-label="Billy Strings event poster, click to expand">
+                            <img src="./assets/flyer1.png" alt="">
+                            <span class="event-thumb-hint">click to expand</span>
+                        </button>
                     </div>
                     <div class="event-row-details-right">
                         <h3>Vendors</h3>
@@ -97,7 +101,11 @@
                 </div>
                 <div class="event-row-details card what-card">
                     <div class="event-row details-left">
-                        <img src="./assets/flyer1.png">
+                        <button type="button" class="event-thumb event-flyer-thumb" data-event-thumb
+                            aria-label="Billy Strings event poster, click to expand">
+                            <img src="./assets/flyer1.png" alt="">
+                            <span class="event-thumb-hint">click to expand</span>
+                        </button>
                     </div>
                     <div class="event-row-details-right">
                         <h3>Vendors</h3>
@@ -233,6 +241,17 @@
             </div>
         </div>
     </footer>
+
+    <div class="event-flyer-modal" data-event-flyer-modal hidden aria-hidden="true">
+        <button type="button" class="event-flyer-modal__backdrop" data-event-flyer-close
+            aria-label="Close flyer preview"></button>
+        <div class="event-flyer-modal__panel" role="dialog" aria-modal="true" aria-label="Event flyer preview">
+            <button type="button" class="event-flyer-modal__close" data-event-flyer-close aria-label="Close">×</button>
+            <img class="event-flyer-modal__image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

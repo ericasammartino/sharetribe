@@ -415,17 +415,49 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    gap: 0.75rem;
+    max-height: 220px;
+    overflow: visible;
 }
 
 .event-thumb {
+    position: relative;
     display: block;
     flex-shrink: 0;
     height: 190px;
     width: 140px;
     overflow: hidden;
+    border: none;
+    padding: 0;
     border-radius: var(--radius-sm);
-    border: 1.5px solid var(--border);
     background: var(--well);
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.event-thumb:hover,
+.event-thumb:focus-visible {
+    transform: scale(1.05);
+    z-index: 3;
+}
+
+.event-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(46, 46, 46, 0.42);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.event-thumb:hover::after,
+.event-thumb:focus-visible::after {
+    opacity: 1;
 }
 
 .event-thumb img {
@@ -433,6 +465,162 @@ p {
     height: 100%;
     max-width: none;
     object-fit: cover;
+}
+
+.event-thumb-hint {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: 1.3;
+    color: #fff;
+    text-align: center;
+    text-transform: lowercase;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.event-thumb:hover .event-thumb-hint,
+.event-thumb:focus-visible .event-thumb-hint {
+    opacity: 1;
+}
+
+.event-flyer-thumb.event-thumb {
+    width: auto;
+    height: auto;
+    max-width: 220px;
+    background: transparent;
+}
+
+.event-flyer-thumb.event-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+/* Event flyer popup modal — fixed overlay centered in the viewport */
+
+body.is-event-flyer-modal-open {
+    overflow: hidden;
+}
+
+.event-flyer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+.event-flyer-modal[hidden] {
+    display: none !important;
+}
+
+.event-flyer-modal.is-open {
+    display: flex !important;
+}
+
+.event-flyer-modal__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(46, 46, 46, 0.62);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+}
+
+.event-flyer-modal__panel {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    width: min(96vw, 52rem);
+    height: 88vh;
+    max-height: 88vh;
+    margin: 0;
+    padding-top: 3.25rem;
+    box-sizing: border-box;
+    overflow: visible;
+    animation: event-flyer-modal-in 0.35s cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+.event-flyer-modal__image {
+    display: block;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    max-height: none;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+    object-position: center;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+}
+
+.event-flyer-modal__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(46, 46, 46, 0.85);
+    color: #fff;
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.event-flyer-modal__close:hover,
+.event-flyer-modal__close:focus-visible {
+    background: var(--border-strong);
+    transform: scale(1.05);
+}
+
+@keyframes event-flyer-modal-in {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .events-card .btn {
@@ -721,12 +909,6 @@ p {
     flex-shrink: 0;
     border: none;
     padding: 0;
-}
-
-.event-row.details-left img {
-    display: block;
-    width: min(100%, 220px);
-    height: auto;
 }
 
 .event-row-details-right {
