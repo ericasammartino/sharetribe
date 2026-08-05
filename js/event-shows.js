@@ -44,9 +44,10 @@
                 return;
             }
 
-            const label = panel.getAttribute("data-label") || "";
-            const flyer = panel.getAttribute("data-flyer") || "";
-            const vendorSource = panel.querySelector(".event-show-vendor-list");
+            const date = panel.getAttribute("data-date") || "";
+            const city = panel.getAttribute("data-city") || "";
+            const vendor = panel.getAttribute("data-vendor") || "";
+            const label = [date, city].filter(Boolean).join(" ");
 
             if (spineText) {
                 spineText.textContent = label;
@@ -56,16 +57,24 @@
                 spine.setAttribute("aria-label", `${label} — toggle vendors`);
             }
 
-            if (flyerImg && flyer) {
-                flyerImg.src = flyer;
+            if (flyerImg) {
+                flyerImg.alt = label ? `${label} event poster` : "";
             }
 
             if (flyerBtn) {
                 flyerBtn.setAttribute("aria-label", `${label} event poster, click to expand`);
             }
 
-            if (vendorList && vendorSource) {
-                vendorList.innerHTML = vendorSource.innerHTML;
+            if (vendorList) {
+                vendorList.innerHTML = "";
+
+                if (vendor) {
+                    const item = document.createElement("li");
+                    const vendorName = document.createElement("span");
+                    vendorName.textContent = vendor;
+                    item.appendChild(vendorName);
+                    vendorList.appendChild(item);
+                }
             }
 
             tabsContainer.innerHTML = "";
@@ -76,7 +85,9 @@
                     return;
                 }
 
-                const tabLabel = tabPanel.getAttribute("data-label") || "";
+                const tabDate = tabPanel.getAttribute("data-date") || "";
+                const tabCity = tabPanel.getAttribute("data-city") || "";
+                const tabLabel = [tabDate, tabCity].filter(Boolean).join(" ");
                 const tab = document.createElement("button");
                 tab.type = "button";
                 tab.className = "event-show-tab";
