@@ -1007,7 +1007,7 @@ body.is-event-flyer-modal-open {
     font-size: var(--text-sm);
 }
 
-/* Event show strip — horizontal flyer + spine + date tabs */
+/* Event show strip — Qway-style active panel + date rail */
 
 .event-show-strip {
     display: flex;
@@ -1015,7 +1015,13 @@ body.is-event-flyer-modal-open {
     min-height: 0;
 }
 
-.event-show-card {
+.event-show-panels {
+    display: flex;
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.event-show-panel {
     display: flex;
     align-items: stretch;
     flex: 0 0 auto;
@@ -1024,6 +1030,10 @@ body.is-event-flyer-modal-open {
     border-radius: var(--radius-sm) 0 0 var(--radius-sm);
     background: var(--surface);
     overflow: hidden;
+}
+
+.event-show-panel[hidden] {
+    display: none;
 }
 
 .event-show-flyer {
@@ -1036,54 +1046,24 @@ body.is-event-flyer-modal-open {
     display: block;
 }
 
-.event-show-vendors {
-    flex: 1 1 auto;
-    min-width: 10rem;
-    max-width: 18rem;
-    padding: 0.65rem 0.85rem 0.65rem 0.5rem;
+.event-show-vendor {
     display: flex;
     flex-direction: column;
-    align-self: stretch;
+    justify-content: center;
+    flex: 0 0 10rem;
+    padding: 0.75rem;
     border-left: 1px solid var(--border);
 }
 
-.event-show-vendors[hidden] {
-    display: none;
-}
-
-.event-show-vendors-title {
+.event-show-vendor-title {
     margin: 0 0 0.5rem;
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     font-weight: 700;
     line-height: 1.2;
 }
 
-.event-show-vendor-list {
-    list-style: none;
+.event-show-vendor p {
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.12rem;
-}
-
-.event-show-vendor-list li {
-    line-height: 1.35;
-}
-
-.event-show-vendor-list a {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--text);
-    text-decoration: underline;
-}
-
-.event-show-vendor-list a:hover,
-.event-show-vendor-list a:focus-visible {
-    color: var(--ui);
-}
-
-.event-show-vendor-list span {
     font-size: var(--text-sm);
     color: var(--text-secondary);
 }
@@ -1108,30 +1088,24 @@ body.is-event-flyer-modal-open {
     color: var(--text-secondary);
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    transition: background 0.15s ease, color 0.15s ease;
+    transform: rotate(180deg);
+    transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .event-show-spine {
     border-left: 1px solid var(--border);
+    cursor: default;
 }
 
-.event-show-spine:hover,
-.event-show-spine:focus-visible,
 .event-show-tab:hover,
 .event-show-tab:focus-visible {
     background: var(--border);
     color: var(--text);
 }
 
-.event-show-spine:focus-visible,
 .event-show-tab:focus-visible {
     outline: 2px solid var(--ui);
     outline-offset: -2px;
-}
-
-.event-show-card.is-open .event-show-spine {
-    background: var(--surface);
-    color: var(--text);
 }
 
 .event-show-tabs {
@@ -1145,6 +1119,10 @@ body.is-event-flyer-modal-open {
     border: 1px solid var(--border);
     border-left: none;
     background: var(--surface);
+}
+
+.event-show-tab.active {
+    display: none;
 }
 
 .event-show-tab:last-child {
@@ -1609,7 +1587,7 @@ body.is-event-flyer-modal-open {
         gap: 0.5rem;
     }
 
-    .event-show-card {
+    .event-show-panel {
         border-radius: var(--radius-sm);
         flex-direction: column;
     }
@@ -1619,9 +1597,8 @@ body.is-event-flyer-modal-open {
         align-self: center;
     }
 
-    .event-show-vendors {
-        max-width: none;
-        min-width: 0;
+    .event-show-vendor {
+        flex-basis: auto;
         border-left: none;
         border-top: 1px solid var(--border);
         padding: 0.75rem 1rem;
@@ -1632,6 +1609,7 @@ body.is-event-flyer-modal-open {
         min-height: auto;
         padding: 0.65rem 1rem;
         writing-mode: horizontal-tb;
+        transform: none;
         border-left: none;
         border-top: 1px solid var(--border);
     }
@@ -1648,6 +1626,7 @@ body.is-event-flyer-modal-open {
         min-height: auto;
         padding: 0.65rem 1rem;
         writing-mode: horizontal-tb;
+        transform: none;
         border: none;
         border-bottom: 1px solid var(--border);
     }
