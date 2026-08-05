@@ -1192,7 +1192,13 @@ body.is-event-flyer-modal-open {
 }
 
 .event-row h2 {
-    text-align: center;
+    text-align: left;
+}
+
+.events-submit-btn {
+    display: flex;
+    margin: 3rem auto 0;
+    width: fit-content;
 }
 
 .event-row-details p {
