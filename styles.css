@@ -1143,12 +1143,33 @@ body.is-event-flyer-modal-open {
 }
 
 .event-vendors summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     width: fit-content;
     cursor: pointer;
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--text);
+    list-style: none;
     text-transform: lowercase;
+}
+
+.event-vendors summary::-webkit-details-marker {
+    display: none;
+}
+
+.event-vendors summary::before {
+    content: "";
+    display: block;
+    width: 0.9rem;
+    height: 0.9rem;
+    background: url("./assets/angle-down.svg") center / contain no-repeat;
+    transition: transform 0.2s ease;
+}
+
+.event-vendors[open] summary::before {
+    transform: rotate(180deg);
 }
 
 .event-vendors summary:hover,
