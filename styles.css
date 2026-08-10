@@ -1119,14 +1119,14 @@ body.is-event-flyer-modal-open {
 
 .event-flyer {
     display: block;
-    width: clamp(20rem, 40vw, 34rem);
+    width: clamp(16rem, 30vw, 26rem);
     max-width: 100%;
     height: auto;
     border-radius: 1rem;
 }
 
 .event-row-details-wrapper .event-flyer {
-    width: clamp(20rem, 40vw, 34rem);
+    width: clamp(16rem, 30vw, 26rem);
     max-height: none;
 }
 
