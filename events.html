@@ -18,7 +18,6 @@
         <div class="header-inner">
             <a href="index.html" class="logo-wordmark" aria-label="ON LOT home"><img src="./assets/group.png"
                     alt="ON LOT"></a>
-
             <nav class="primary-nav" aria-label="Main">
                 <a href="index.html#what-is-on-lot">what is on lot?</a>
                 <a href="events.html" aria-current="page">events</a>
@@ -26,7 +25,6 @@
                 <a href="vendor-info.html">vendor info</a>
                 <a href="shop.html">shop</a>
             </nav>
-
             <div class="header-actions">
                 <!-- <form class="search-form" role="search" action="shop.html">
                     <label class="search-form-field" for="site-search">
@@ -36,20 +34,16 @@
                         <input id="site-search" type="search" name="q" placeholder="search">
                     </label>
                 </form> -->
-
                 <a href="cart.html" class="icon-button" aria-label="Shopping cart">
                     <img src="./assets/cart-shopping.svg" alt="" width="28" height="24">
                 </a>
-
                 <a href="signup.html" class="text-link">Create an Account</a>
                 <a href="login.html" class="btn btn-outline">Log In</a>
             </div>
         </div>
     </header>
-
     <main id="main" class="events-page">
         <h1 class="events-page-title">Events</h1>
-
         <div class="events-list">
             <details class="event-row">
                 <summary class="event-row-summary">
@@ -63,10 +57,12 @@
                     </span>
                 </summary>
                 <div class="event-row-details event-show-strip" data-event-show-strip>
-
+                    <div class="event">
+                        <img src="./assets/flyer4.png" class="event-flyer" alt="event flyer">
+                        <p>7.17 Richmond, VA</p>
+                    </div>
                 </div>
             </details>
-
             <details class="event-row">
                 <summary class="event-row-summary">
                     <div class="event-row-info">
@@ -87,7 +83,6 @@
                     <p>Lot opens early. Expect apparel, glass, and lot favorites from the usual crew.</p>
                 </div>
             </details>
-
             <details class="event-row">
                 <summary class="event-row-summary">
                     <div class="event-row-info">
@@ -110,7 +105,6 @@
                     </p>
                 </div>
             </details>
-
             <details class="event-row">
                 <summary class="event-row-summary">
                     <div class="event-row-info">
@@ -132,10 +126,8 @@
                 </div>
             </details>
         </div>
-
         <a href="submit-event.html" class="btn btn-filled events-submit-btn">submit an event</a>
     </main>
-
     <footer class="site-footer">
         <div class="footer-watermark" aria-hidden="true">
             <img src="./assets/Group 1.png" alt="">
@@ -163,9 +155,9 @@
                         <a href="events.html">events</a>
                         <span aria-hidden="true">·</span>
                         <a href="creator-spotlight.html">creator spotlight</a>
-                        <span aria-hidden="true">·</span>
+                        <span aria-hidden="true">&middot;</span>
                         <a href="vendor-info.html">vendor info</a>
-                        <span aria-hidden="true">·</span>
+                        <span aria-hidden="true">&middot;</span>
                         <a href="shop.html">shop</a>
                     </nav>
                     <p class="footer-meta">
@@ -179,7 +171,6 @@
             </div>
         </div>
     </footer>
-
     <div class="event-flyer-modal" data-event-flyer-modal hidden aria-hidden="true">
         <button type="button" class="event-flyer-modal__backdrop" data-event-flyer-close
             aria-label="Close flyer preview"></button>
@@ -188,7 +179,6 @@
             <img class="event-flyer-modal__image" src="" alt="">
         </div>
     </div>
-
     <script src="js/script.js" defer></script>
 </body>
 
