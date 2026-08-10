@@ -633,6 +633,30 @@ p {
     transition: filter 0.3s ease, transform 0.3s ease;
 }
 
+.event-thumb-hint {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: 1.3;
+    color: #fff;
+    text-align: center;
+    text-transform: lowercase;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.event-thumb:hover .event-thumb-hint,
+.event-thumb:focus-visible .event-thumb-hint {
+    opacity: 1;
+}
+
 /* Event flyer popup modal — fixed overlay centered in the viewport */
 
 body.is-event-flyer-modal-open {
