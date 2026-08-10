@@ -1,5 +1,70 @@
 /**
- * ON LOT — event flyer popup modal (homepage + events page)
+ * homepage event thumb expand
+ */
+(function () {
+    const thumbs = document.querySelectorAll("[data-event-thumb]");
+    if (!thumbs.length) {
+        return;
+    }
+
+    function closeExpanded(card) {
+        if (!card) {
+            return;
+        }
+
+        const panel = card.querySelector(".event-expanded");
+        card.classList.remove("is-expanded");
+
+        if (panel) {
+            panel.hidden = true;
+            panel.setAttribute("aria-hidden", "true");
+        }
+    }
+
+    function openExpanded(thumb) {
+        const card = thumb.closest(".events-card");
+        const panel = card?.querySelector(".event-expanded");
+        const expandedImg = card?.querySelector(".event-expanded-image");
+        const img = thumb.querySelector("img");
+
+        if (!card || !panel || !expandedImg || !img) {
+            return;
+        }
+
+        expandedImg.src = img.src;
+        expandedImg.alt = img.alt || thumb.getAttribute("aria-label") || "Expanded event poster";
+        panel.hidden = false;
+        panel.setAttribute("aria-hidden", "false");
+        card.classList.add("is-expanded");
+        card.querySelector(".event-expanded-close")?.focus();
+    }
+
+    thumbs.forEach((thumb) => {
+        thumb.addEventListener("click", () => {
+            openExpanded(thumb);
+        });
+    });
+
+    document.querySelectorAll(".event-expanded-close").forEach((closeBtn) => {
+        closeBtn.addEventListener("click", () => {
+            closeExpanded(closeBtn.closest(".events-card"));
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") {
+            return;
+        }
+
+        document.querySelectorAll(".events-card.is-expanded").forEach((card) => {
+            closeExpanded(card);
+        });
+    });
+})();
+
+
+/**
+ * event flyer popup modal (homepage + events page)
  */
 (function () {
     const modal = document.querySelector("[data-event-flyer-modal]");
