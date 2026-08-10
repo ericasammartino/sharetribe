@@ -116,14 +116,14 @@ p {
 
 .btn-filled {
     color: var(--page);
-    background: var(--border-strong);
+    background: #5c5c5c;
     transition: transform 300ms ease-in-out;
 }
 
 
 .btn-filled:hover,
 .btn-filled:focus-visible {
-    background: #5c5c5c;
+    background: var(--border-strong);
 }
 
 .btn-hero {
@@ -259,7 +259,7 @@ p {
 .primary-nav a:hover,
 .primary-nav a:focus-visible {
     text-decoration: underline;
-    color: #000000;
+    color: var(--border-strong)
 }
 
 .primary-nav a[aria-current="page"] {
@@ -631,149 +631,6 @@ p {
     max-width: none;
     object-fit: cover;
     transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-/* Events page flyers — large thumbs */
-
-.events-page .event-flyer-thumb.event-thumb {
-    width: 244px;
-    height: 300px;
-    max-width: none;
-    background: var(--well);
-}
-
-.events-page .event-flyer-thumb.event-thumb img {
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    object-fit: contain;
-}
-
-
-/* Event show strip — horizontal flyer + spine + date tabs */
-
-.event-show-strip {
-    display: flex;
-    align-items: stretch;
-    min-height: 0;
-}
-
-.event-show-card {
-    display: flex;
-    align-items: stretch;
-    flex: 0 0 auto;
-    min-width: 0;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
-    background: var(--surface);
-    overflow: hidden;
-}
-
-.event-show-flyer {
-    flex-shrink: 0;
-    padding: 0.25rem;
-    line-height: 0;
-}
-
-.event-show-flyer .event-flyer-thumb.event-thumb {
-    display: block;
-}
-
-.event-show-vendors {
-    flex: 1 1 auto;
-    min-width: 10rem;
-    max-width: 18rem;
-    padding: 0.65rem 0.85rem 0.65rem 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    border-left: 1px solid var(--border);
-}
-
-.event-show-vendors[hidden] {
-    display: none;
-}
-
-.event-show-vendors-title {
-    margin: 0 0 0.5rem;
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.event-show-vendor-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.12rem;
-}
-
-.event-show-vendor-list li {
-    line-height: 1.35;
-}
-
-.event-show-vendor-list span {
-    font-size: var(--text-sm);
-    color: var(--text-secondary);
-}
-
-.event-show-spine,
-.event-show-tab {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.75rem;
-    min-height: 100%;
-    padding: 0.75rem 0.35rem;
-    border: none;
-    background: var(--well);
-    cursor: pointer;
-    font-family: var(--font);
-    font-size: 0.8125rem;
-    font-weight: 500;
-    line-height: 1.35;
-    letter-spacing: 0.01em;
-    color: var(--text-secondary);
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transition: background 0.15s ease, color 0.15s ease;
-}
-
-.event-show-spine {
-    border-left: 1px solid var(--border);
-}
-
-.event-show-spine:hover,
-.event-show-spine:focus-visible,
-.event-show-tab:hover,
-.event-show-tab:focus-visible {
-    background: var(--border);
-    color: var(--text);
-}
-
-.event-show-card.is-open .event-show-spine {
-    background: var(--surface);
-    color: var(--text);
-}
-
-.event-show-tabs {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    flex-shrink: 0;
-}
-
-.event-show-tab {
-    border: 1px solid var(--border);
-    border-left: none;
-    background: var(--surface);
-}
-
-.event-show-tab:last-child {
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 /* Event flyer popup modal — fixed overlay centered in the viewport */
@@ -1199,6 +1056,28 @@ body.is-event-flyer-modal-open {
     display: flex;
     margin: 3rem auto 0;
     width: fit-content;
+}
+
+.event {
+    border: 4px solid var(--border);
+    height: 30rem;
+    width: 34vw;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.event-flyer {
+    max-height: 26rem;
+    max-width: 30rem;
+    border-radius: 1rem;
+    margin-left: 2rem;
+}
+
+.event p {
+    display: inline-block;
+    rotate: 270deg;
 }
 
 .event-row-details p {
@@ -1904,7 +1783,7 @@ body.is-event-flyer-modal-open {
 .footer-panel {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 0.85rem;
     max-width: 28rem;
     margin-left: auto;
@@ -1937,7 +1816,7 @@ body.is-event-flyer-modal-open {
 }
 
 .footer-content {
-    text-align: center;
+    text-align: right;
 }
 
 .footer-tagline {
@@ -1974,7 +1853,7 @@ body.is-event-flyer-modal-open {
 .footer-nav a:focus-visible,
 .footer-meta a:hover,
 .footer-meta a:focus-visible {
-    color: var(--text);
+    color: var(--border-strong);
     text-decoration: underline;
 }
 
