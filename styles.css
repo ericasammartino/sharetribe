@@ -1082,21 +1082,71 @@ body.is-event-flyer-modal-open {
     width: fit-content;
 }
 
+.event-row-details-carousel {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
 .event-row-details-wrapper {
     display: flex;
     gap: 1rem;
     overflow-x: auto;
     overflow-y: hidden;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 0;
+    padding: 0 3.25rem 1rem;
+    scroll-behavior: smooth;
     scroll-snap-type: x proximity;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
+}
+
+.event-row-details-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .event-row-details-wrapper .event-row-details {
     flex: 0 0 auto;
     margin-bottom: 0;
     scroll-snap-align: start;
+}
+
+.event-scroll-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    box-shadow: 0 2px 8px rgba(46, 46, 46, 0.12);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.event-scroll-btn:hover,
+.event-scroll-btn:focus-visible {
+    background: var(--well);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.event-scroll-btn img {
+    width: 0.9rem;
+    height: 0.9rem;
+    max-width: none;
+}
+
+.event-scroll-btn--prev {
+    left: 0;
+}
+
+.event-scroll-btn--next {
+    right: 0;
 }
 
 .event {

@@ -1,4 +1,40 @@
 /**
+ * event details carousel controls
+ */
+(function () {
+    const carousels = document.querySelectorAll("[data-event-carousel]");
+
+    carousels.forEach((carousel) => {
+        const track = carousel.querySelector("[data-event-scroll-track]");
+        const buttons = carousel.querySelectorAll("[data-event-scroll]");
+
+        if (!track || !buttons.length) {
+            return;
+        }
+
+        function getScrollAmount() {
+            const card = track.querySelector(".event-row-details");
+            if (!card) {
+                return track.clientWidth * 0.8;
+            }
+
+            const gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+            return card.getBoundingClientRect().width + gap;
+        }
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const direction = button.getAttribute("data-event-scroll") === "prev" ? -1 : 1;
+                track.scrollBy({
+                    left: getScrollAmount() * direction,
+                    behavior: "smooth",
+                });
+            });
+        });
+    });
+})();
+
+/**
  * homepage event thumb expand
  */
 (function () {
