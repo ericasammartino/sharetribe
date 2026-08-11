@@ -1357,6 +1357,234 @@ body.is-event-flyer-modal-open {
     object-fit: cover;
 }
 
+/* Creator Spotlight feature layout */
+
+.creator-spotlight-page {
+    max-width: var(--header-max-width);
+    padding: 3rem 1.5rem 4rem;
+}
+
+.creator-spotlight-page .spotlight-intro {
+    max-width: 72rem;
+    margin: 0 auto 2rem;
+    text-align: left;
+}
+
+.creator-spotlight-page .spotlight-page-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.creator-spotlight-page .spotlight-page-subtitle {
+    margin-top: 0.2rem;
+    font-size: var(--text-sm);
+    text-transform: none;
+}
+
+.spotlight-feature {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1.5rem clamp(1.5rem, 5vw, 6rem) 3rem;
+}
+
+.spotlight-feature .spotlight-tag {
+    display: inline-flex;
+    width: fit-content;
+    margin: 0 0 1.25rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: var(--radius-pill);
+    background: #f8edbf;
+    color: var(--text-secondary);
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.spotlight-feature .spotlight-name {
+    margin: 0 0 3.5rem;
+    text-align: center;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.1;
+}
+
+.spotlight-feature h3,
+.spotlight-feature h4,
+.spotlight-feature p {
+    margin-top: 0;
+}
+
+.spotlight-feature h3 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.spotlight-feature h4 {
+    margin-bottom: 0.15rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.spotlight-feature p,
+.spotlight-feature li {
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.spotlight-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(14rem, 0.75fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.spotlight-image-well {
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: var(--well);
+}
+
+.spotlight-image-well img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    object-fit: cover;
+}
+
+.spotlight-hero-image-well {
+    aspect-ratio: 4 / 3;
+}
+
+.spotlight-love-note {
+    max-width: 18rem;
+}
+
+.spotlight-love-note p {
+    margin-bottom: 0;
+}
+
+.spotlight-content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+}
+
+.spotlight-main-column,
+.spotlight-side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.spotlight-qa-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem 1.75rem;
+}
+
+.spotlight-qa-item p {
+    margin-bottom: 0;
+    font-size: 0.72rem;
+    line-height: 1.35;
+}
+
+.spotlight-process-image-well {
+    aspect-ratio: 16 / 9;
+}
+
+.spotlight-portrait-image-well {
+    aspect-ratio: 4 / 5.25;
+}
+
+.spotlight-next-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+}
+
+.spotlight-next-card ul {
+    margin: 1.75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.spotlight-products {
+    margin-top: 5rem;
+}
+
+.spotlight-product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.spotlight-product-image-well {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 2px;
+    background: var(--well);
+}
+
+.spotlight-product-image-well img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spotlight-product p {
+    margin: 0.45rem 0 0;
+    font-size: 0.65rem;
+    line-height: 1.2;
+}
+
+.spotlight-actions {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.spotlight-actions .spotlight-shop-btn {
+    grid-column: 2;
+    min-width: min(19rem, 100%);
+    width: auto;
+    max-width: none;
+}
+
+.spotlight-socials {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.spotlight-socials a {
+    display: inline-flex;
+    opacity: 0.55;
+}
+
+.spotlight-socials a:hover,
+.spotlight-socials a:focus-visible {
+    opacity: 0.9;
+}
+
+.spotlight-socials img {
+    width: 18px;
+    height: 18px;
+    max-width: none;
+}
+
 /* Vendor Info page */
 
 .vendor-info-page {
@@ -2177,5 +2405,67 @@ body.is-event-flyer-modal-open {
 
     .footer-inner {
         justify-items: start;
+    }
+}
+
+@media (max-width: 900px) {
+    .spotlight-feature {
+        padding: 1.25rem;
+    }
+
+    .spotlight-feature .spotlight-name {
+        margin-bottom: 2.25rem;
+        text-align: left;
+        letter-spacing: 0.08em;
+    }
+
+    .spotlight-hero-grid,
+    .spotlight-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .spotlight-love-note {
+        max-width: none;
+    }
+
+    .spotlight-qa-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .spotlight-side-column {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.85fr);
+    }
+
+    .spotlight-product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .creator-spotlight-page .spotlight-intro {
+        margin-bottom: 1.25rem;
+    }
+
+    .spotlight-feature .spotlight-name {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .spotlight-qa-grid,
+    .spotlight-side-column,
+    .spotlight-product-grid,
+    .spotlight-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .spotlight-actions {
+        justify-items: center;
+        gap: 1.5rem;
+    }
+
+    .spotlight-actions .spotlight-shop-btn {
+        grid-column: auto;
+        width: 100%;
     }
 }
