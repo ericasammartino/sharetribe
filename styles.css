@@ -1330,9 +1330,38 @@ body.is-event-flyer-modal-open {
     flex-direction: row;
 }
 
+.creator-content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .creator-lot-dates {
-    width: 16rem;
-    height: 6rem;
+    width: min(24rem, 100%);
+    min-height: 13rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+}
+
+.creator-lot-dates h3 {
+    margin: 0 0 1.75rem;
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+    line-height: 1.2;
+}
+
+.creator-lot-dates ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.creator-lot-dates li {
+    color: var(--text);
+    font-size: var(--text-base);
+    line-height: 1.55;
 }
 
 
