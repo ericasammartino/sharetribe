@@ -1297,16 +1297,43 @@ body.is-event-flyer-modal-open {
     box-shadow: var(--shadow-card);
 }
 
+.spotlight-card>h1 {
+    display: inline-block;
+    margin: 0 0 3rem 2rem;
+    vertical-align: middle;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+}
+
+.spotlight-card--summary {
+    min-height: 10rem;
+    padding: 2rem 2.5rem;
+}
+
+.spotlight-card--summary h1 {
+    margin-bottom: 0;
+}
+
 .spotlight-card h3 {
     margin: 0 0 1rem;
 }
 
 .creator-eyelash {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
     background-color: #FFECC2;
     border-radius: 0.5rem;
-    padding: 1rem;
-    min-width: 7rem;
-    max-width: 8rem;
+    padding: 0.35rem 0.75rem;
+    min-width: 0;
+    max-width: none;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
 }
 
 .creator-intro {
