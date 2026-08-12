@@ -1396,6 +1396,8 @@ body.is-event-flyer-modal-open {
 
 .creator-shop {
     margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .creator-shop-row {
@@ -1418,7 +1420,7 @@ body.is-event-flyer-modal-open {
 }
 
 .creator-btn {
-    margin: 3rem;
+    margin: 3rem auto 0;
     align-self: center;
 }
 
