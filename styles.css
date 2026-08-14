@@ -2117,10 +2117,8 @@ body.is-event-flyer-modal-open {
 }
 
 .vendor-store-shop {
-    width: fit-content;
-    max-width: 100%;
+    width: min(100%, 63rem);
     margin: 0 auto;
-    overflow-x: auto;
 }
 
 .vendor-store-toolbar {
@@ -2146,16 +2144,18 @@ body.is-event-flyer-modal-open {
 
 .vendor-store-grid {
     display: grid;
-    grid-template-columns: repeat(4, 240px);
+    grid-template-columns: repeat(4, minmax(0, 240px));
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .vendor-store-product {
     display: flex;
     flex-direction: column;
-    width: 240px;
+    width: 100%;
+    min-width: 0;
     height: 320px;
+    box-sizing: border-box;
     padding: 0.5rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
@@ -2163,9 +2163,9 @@ body.is-event-flyer-modal-open {
 }
 
 .vendor-store-product-image {
-    flex: 0 0 240px;
+    flex: 0 0 auto;
     width: 100%;
-    height: 240px;
+    height: 220px;
     margin-bottom: 0.55rem;
     border-radius: calc(var(--radius-sm) - 2px);
     background: #c7c7c7;
@@ -2225,31 +2225,15 @@ body.is-event-flyer-modal-open {
     .vendor-store-title-row {
         flex-wrap: wrap;
     }
-
-    .vendor-store-shop {
-        width: fit-content;
-        max-width: 100%;
-    }
-
-    .vendor-store-grid {
-        grid-template-columns: repeat(4, 240px);
-        gap: 0.5rem;
-    }
-
-    .vendor-store-product {
-        width: 240px;
-        height: 320px;
-    }
-
-    .vendor-store-product-image {
-        flex: 0 0 240px;
-        height: 240px;
-    }
 }
 
 @media (max-width: 640px) {
     .vendor-store-page {
         padding: 2rem 1.25rem 3rem;
+    }
+
+    .vendor-store-grid {
+        grid-template-columns: repeat(2, minmax(0, 240px));
     }
 
     .vendor-store-product {
