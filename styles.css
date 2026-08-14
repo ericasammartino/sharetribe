@@ -2120,6 +2120,7 @@ body.is-event-flyer-modal-open {
     width: fit-content;
     max-width: 100%;
     margin: 0 auto;
+    overflow-x: auto;
 }
 
 .vendor-store-toolbar {
@@ -2226,23 +2227,23 @@ body.is-event-flyer-modal-open {
     }
 
     .vendor-store-shop {
-        width: 100%;
+        width: fit-content;
+        max-width: 100%;
     }
 
     .vendor-store-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(4, 240px);
         gap: 0.5rem;
     }
 
     .vendor-store-product {
-        width: 100%;
+        width: 240px;
         height: 320px;
     }
 
     .vendor-store-product-image {
-        flex-basis: auto;
-        height: auto;
-        aspect-ratio: 1 / 1;
+        flex: 0 0 240px;
+        height: 240px;
     }
 }
 
@@ -2251,13 +2252,8 @@ body.is-event-flyer-modal-open {
         padding: 2rem 1.25rem 3rem;
     }
 
-    .vendor-store-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .vendor-store-product {
-        height: auto;
-        min-height: 320px;
+        height: 320px;
     }
 }
 
