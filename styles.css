@@ -2205,21 +2205,43 @@ body.is-event-flyer-modal-open {
 }
 
 .vendor-store-product-meta button {
-    min-width: 3.75rem;
+    position: relative;
+    min-width: 1.7rem;
+    width: 1.7rem;
     min-height: 1.4rem;
-    padding: 0.15rem 0.65rem;
+    padding: 0.15rem 0.45rem;
     border: 1px solid var(--border);
     border-radius: var(--radius-pill);
     background: var(--surface);
-    color: var(--text-secondary);
+    color: transparent;
     font-family: var(--font);
     font-size: 0.7rem;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
     cursor: pointer;
+    transition: width 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.vendor-store-product-meta button::after {
+    content: "+";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
 }
 
 .vendor-store-product-meta button:hover,
 .vendor-store-product-meta button:focus-visible {
+    width: 3.75rem;
     border-color: var(--text);
+}
+
+.vendor-store-product-meta button:hover::after,
+.vendor-store-product-meta button:focus-visible::after {
+    content: "+ cart";
     color: var(--text);
 }
 
