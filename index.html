@@ -16,7 +16,7 @@
 <body>
     <header class="site-header">
         <div class="header-inner">
-            <a href="/" class="logo-wordmark" aria-label="ON LOT home"><img src="./assets/logo.jpg"></a>
+            <a href="/" class="logo-wordmark" aria-label="ON LOT home"><img src="./assets/group.png"></a>
 
             <nav class="primary-nav" aria-label="Main">
                 <a href="#what-is-on-lot">what is on lot?</a>
@@ -27,21 +27,21 @@
             </nav>
 
             <div class="header-actions">
-                <form class="search-form" role="search" action="shop.html">
+                <!-- <form class="search-form" role="search" action="search.html" method="get">
                     <label class="search-form-field" for="site-search">
                         <span class="search-form-icon" aria-hidden="true">
                             <img src="./assets/magnifying-glass.svg" alt="magnifying glass" width="18" height="18">
                         </span>
-                        <input id="site-search" type="search" name="q" placeholder="search">
+                        <input id="site-search" type="search" name="q" placeholder="search" autocomplete="off">
                     </label>
-                </form>
+                </form> -->
 
                 <a href="cart.html" class="icon-button" aria-label="Shopping cart">
                     <img src="./assets/cart-shopping.svg" alt="shopping cart" width="28" height="24">
                 </a>
 
-                <a href="signup.html" class="text-link">Create an Account</a>
-                <a href="login.html" class="btn btn-filled-sm">Log In</a>
+                <a href="signup.html" class="text-link">create an account</a>
+                <a href="login.html" class="btn btn-outline">Log In</a>
             </div>
         </div>
     </header>
@@ -49,15 +49,23 @@
     <main id="main">
         <section class="hero" aria-labelledby="hero-heading">
             <div class="hero-inner">
-                <img class="hero-logo" src="assets/hero-logo.jpg" alt="ON LOT" width="720" height="280"
-                    id="hero-heading">
-                <p class="tagline">the online lot - where you can find everything but the balloons</p>
-                <a href="shop.html" class="btn btn-outline btn-hero">shop on lot</a>
+                <div class="hero-logo image-text">ON LOT</div>
+                <p class="tagline">the online lot - where you can find everything but the
+                    balloons</p>
+                <a href="shop.html" class="btn btn-filled btn-hero" data-hero-cta>
+                    <span class="btn-hero-label btn-hero-label--default">shop on lot</span>
+                    <span class="btn-hero-label btn-hero-label--active">come poke around</span>
+
+                </a>
+
+
             </div>
         </section>
 
-        <section class="card-section" id="what-is-on-lot" aria-labelledby="what-heading">
-            <div class="card what-card">
+        <span class="scroll-anchor" id="what-is-on-lot" aria-hidden="true"></span>
+        <section class="card-section" aria-labelledby="what-heading">
+
+            <div class="card what-card ">
                 <h3 id="what-heading">What is on lot?</h3>
                 <p>Regretting not buying that item on lot? This marketplace helps you find and buy goods from the
                     vendors you saw at shows, while keeping support inside the community.
@@ -72,22 +80,28 @@
                 <div class="grid-left">
                     <article class="card events-card">
                         <h2>Events</h2>
-                        <p class="card-subtitle">Details on where to find your favorite vendors.</p>
+                        <p class="card-subtitle">Upcoming Events</p>
                         <div class="event-thumbs">
-                            <a href="events.html" class="event-thumb">
-                                <img src="assets/flyer1.png" alt="Billy Strings event poster">
-                            </a>
-                            <a href="events.html" class="event-thumb">
-                                <img src="assets/flyer2.png" alt="Thankful for Yoga event poster">
-                            </a>
-                            <a href="events.html" class="event-thumb">
-                                <img src="assets/flyer3.png" alt="Wyllys event poster">
-                            </a>
+                            <button type="button" class="event-thumb" data-event-thumb
+                                aria-label="Billy Strings event poster, click to expand">
+                                <img src="assets/flyer1.png" alt="">
+                                <span class="event-thumb-hint">click to expand</span>
+                            </button>
+                            <button type="button" class="event-thumb" data-event-thumb
+                                aria-label="Thankful for Yoga event poster, click to expand">
+                                <img src="assets/flyer2.png" alt="">
+                                <span class="event-thumb-hint">click to expand</span>
+                            </button>
+                            <button type="button" class="event-thumb" data-event-thumb
+                                aria-label="Wyllys event poster, click to expand">
+                                <img src="assets/flyer3.png" alt="">
+                                <span class="event-thumb-hint">click to expand</span>
+                            </button>
                         </div>
-                        <a href="events.html" class="btn btn-outline">see all events</a>
+                        <a href="events.html" class="btn btn-filled">see all events</a>
                     </article>
 
-                    <article class="card vendors-card">
+                    <article class="card vendors-card ">
                         <img class="vendors-photo" src="assets/vendors-lot.jpg" alt="Outdoor market at the lot">
                         <div class="vendors-overlay">
                             <div class="vendors-copy">
@@ -99,7 +113,7 @@
                     </article>
                 </div>
 
-                <article class="card creator-card">
+                <article class="card creator-card ">
                     <img class="creator-photo" src="assets/creator-spotlight.jpg"
                         alt="Vendor wearing colorful woven bracelets">
                     <div class="creator-overlay">
@@ -122,40 +136,40 @@
                     </div>
 
                     <div class="category-grid">
-                        <a href="shop.html?category=pins" class="category-tile">
+                        <a href="shop.html?category=pins" class="category-tile ">
                             <div class="category-image-well">
                                 <img src="assets/shop/pin.jpg" alt="Billy Strings pin">
                             </div>
-                            <span class="category-label label-blue">pins</span>
+                            <span class="category-label label-blue">new arrivals</span>
                         </a>
-                        <a href="shop.html?category=clothing" class="category-tile">
+                        <a href="shop.html?category=clothing" class="category-tile ">
                             <div class="category-image-well">
                                 <img src="assets/shop/clothing.jpg" alt="Graphic t-shirts on a rack">
                             </div>
-                            <span class="category-label label-green">clothing</span>
+                            <span class="category-label label-green">favorites</span>
                         </a>
-                        <a href="shop.html?category=housewares" class="category-tile">
+                        <a href="shop.html?category=housewares" class="category-tile ">
                             <div class="category-image-well">
                                 <img src="assets/shop/housewares.jpg" alt="Shop interior with lamps">
                             </div>
-                            <span class="category-label label-maroon">housewares</span>
+                            <span class="category-label label-maroon">categories</span>
                         </a>
-                        <a href="shop.html?category=jewelry" class="category-tile">
+                        <a href="shop.html?category=jewelry" class="category-tile ">
                             <div class="category-image-well">
                                 <img src="assets/shop/jewelry.jpg" alt="Earrings on display">
                             </div>
-                            <span class="category-label label-pink">jewelry</span>
+                            <span class="category-label label-orange">deals</span>
                         </a>
-                        <a href="shop.html?category=handmade-art" class="category-tile">
+                        <a href="shop.html?category=handmade-art" class="category-tile ">
                             <div class="category-image-well">
                                 <img src="assets/shop/handmade-art.jpg" alt="Macramé wall hanging">
                             </div>
-                            <span class="category-label label-navy">handmade art</span>
+                            <span class="category-label label-navy">think of something</span>
                         </a>
                     </div>
                 </div>
 
-                <a href="shop.html" class="btn btn-outline shop-cta">come poke around</a>
+                <a href="shop.html" class="btn btn-filled shop-cta">explore the marketplace</a>
             </div>
         </section>
     </main>
@@ -182,14 +196,14 @@
                 <div class="footer-content">
                     <p class="footer-tagline">everything but the balloons</p>
                     <nav class="footer-nav" aria-label="Footer">
-                        <a href="#what-is-on-lot">what is on lot?</a>
+                        <a href="index.html#what-is-on-lot">what is on lot?</a>
                         <span aria-hidden="true">·</span>
                         <a href="events.html">events</a>
                         <span aria-hidden="true">·</span>
                         <a href="creator-spotlight.html">creator spotlight</a>
-                        <span aria-hidden="true">·</span>
+                        <span aria-hidden="true">&middot;</span>
                         <a href="vendor-info.html">vendor info</a>
-                        <span aria-hidden="true">·</span>
+                        <span aria-hidden="true">&middot;</span>
                         <a href="shop.html">shop</a>
                     </nav>
                     <p class="footer-meta">
@@ -203,6 +217,22 @@
             </div>
         </div>
     </footer>
+
+    <div class="event-flyer-modal" data-event-flyer-modal hidden aria-hidden="true">
+        <button type="button" class="event-flyer-modal__backdrop" data-event-flyer-close
+            aria-label="Close flyer preview"></button>
+        <div class="event-flyer-modal__panel" role="dialog" aria-modal="true" aria-label="Event flyer preview">
+            <button type="button" class="event-flyer-modal__close" data-event-flyer-close aria-label="Close"><img
+                    src="./assets/xmark.svg" class="icon-button"></button>
+            <img class="event-flyer-modal__image" src="" alt="">
+        </div>
+    </div>
+
+
+    <script src="config/typesense.public.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typesense@2/dist/typesense.min.js"></script>
+    <script src="js/header-autocomplete.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

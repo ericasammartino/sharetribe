@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ON LOT shop — browse handmade goods, pins, apparel, jewelry, and more from lot vendors.">
+    <title>Shop — ON LOT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-wordmark" aria-label="ON LOT home"><img src="./assets/group.png"
+                    alt="ON LOT"></a>
+
+            <nav class="primary-nav" aria-label="Main">
+                <a href="index.html#what-is-on-lot">what is on lot?</a>
+                <a href="events.html">events</a>
+                <a href="creator-spotlight.html">creator spotlight</a>
+                <a href="vendor-info.html">vendor info</a>
+                <a href="shop.html" aria-current="page">shop</a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- <form class="search-form" role="search" action="shop.html" method="get" data-typesense-search-form>
+                    <label class="search-form-field" for="header-search">
+                        <span class="search-form-icon" aria-hidden="true">
+                            <img src="./assets/magnifying-glass.svg" alt="" width="18" height="18">
+                        </span>
+                        <input id="header-search" type="search" name="q" placeholder="search"
+                            data-typesense-search-input autocomplete="off">
+                    </label>
+                </form> -->
+
+                <a href="cart.html" class="icon-button" aria-label="Shopping cart">
+                    <img src="./assets/cart-shopping.svg" alt="" width="28" height="24">
+                </a>
+
+                <a href="signup.html" class="text-link">Create an Account</a>
+                <a href="login.html" class="btn btn-outline">Log In</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="shop-page">
+        <h1 class="shop-page-title" data-search-query-label>Shop</h1>
+
+        <form class="shop-search-form" role="search" action="shop.html" method="get" data-typesense-search-form>
+            <label class="shop-search-field" for="shop-search">
+                <span class="shop-search-icon" aria-hidden="true">
+                    <img src="./assets/magnifying-glass.svg" alt="" width="20" height="20">
+                </span>
+                <input id="shop-search" type="search" name="q" placeholder="search" data-typesense-search-input>
+            </label>
+        </form>
+
+        <div data-shop-browse>
+            <nav class="shop-tags" aria-label="Shop collections">
+                <a href="shop.html?tag=remembering-jerry">remembering jerry</a>
+                <a href="shop.html?tag=summer-tour">summer tour</a>
+                <a href="shop.html?tag=fourth-of-july">fourth of july</a>
+                <a href="shop.html?tag=spring-tour-encores">spring tour encores</a>
+            </nav>
+
+            <div class="shop-toolbar">
+                <button type="button" class="shop-filter-btn" aria-expanded="false" aria-controls="shop-filters">
+                    Filter
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+
+                <div id="shop-filters" class="shop-filters" hidden>
+                    <form class="shop-filters-form" data-shop-filter-form>
+                        <div class="shop-filters-field">
+
+
+                            <fieldset class="shop-filters-bands">
+                                <legend class="shop-filters-label">Band</legend>
+                                <div class="shop-filters-checkboxes">
+                                    <label class="shop-filters-check">
+                                        <input type="checkbox" name="band" value="billy-strings" data-shop-filter-band>
+                                        <span>Billy Strings</span>
+                                    </label>
+                                    <label class="shop-filters-check">
+                                        <input type="checkbox" name="band" value="phish" data-shop-filter-band>
+                                        <span>Phish</span>
+                                    </label>
+                                    <!-- grateful-dead, widespread-panic, goose -->
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <fieldset class="shop-filters-categories">
+                            <legend class="shop-filters-label">Category</legend>
+                            <div class="shop-filters-checkboxes">
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="category" value="pins" data-shop-filter-category>
+                                    <span>pins</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="category" value="clothing" data-shop-filter-category>
+                                    <span>clothing</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="category" value="jewelry" data-shop-filter-category>
+                                    <span>jewelry</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="category" value="housewares" data-shop-filter-category>
+                                    <span>housewares</span>
+                                </label>
+                                <label class="shop-filters-check">
+                                    <input type="checkbox" name="category" value="handmade-art"
+                                        data-shop-filter-category>
+                                    <span>handmade art</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div class="shop-filters-actions">
+                            <button type="submit" class="btn btn-filled-sm">Apply filters</button>
+                            <button type="button" class="btn btn-outline" data-shop-filter-clear>Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="shop-sections">
+                <section class="shop-row" aria-labelledby="new-arrivals-heading">
+                    <div class="shop-row-header">
+                        <h2 id="new-arrivals-heading" class="shop-row-title">new arrivals</h2>
+                        <a href="shop.html?section=new-arrivals" class="shop-see-all">
+                            see all
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="product-grid">
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/pin.jpg" alt="Billy Strings enamel pin">
+                            </div>
+                            <h3>Billy Pin</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$20</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/products/phish-patch.jpg" alt="Phish logo patch">
+                            </div>
+                            <h3>Phish Logo Patch</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$10</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/jewelry.jpg" alt="Sun and moon necklace">
+                            </div>
+                            <h3>Sun &amp; Moon Necklace</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$50</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="shop-row" aria-labelledby="favorites-heading">
+                    <div class="shop-row-header">
+                        <h2 id="favorites-heading" class="shop-row-title">favorites</h2>
+                        <a href="shop.html?section=favorites" class="shop-see-all">
+                            see all
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="product-grid">
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/clothing.jpg" alt="Phish graphic t-shirt">
+                            </div>
+                            <h3>Phish T-shirt</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$35</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/creator-spotlight/cap.jpg" alt="Grateful Dead embroidered hat">
+                            </div>
+                            <h3>Grateful Dead Hat</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$25</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/housewares.jpg" alt="John Bell Yeti tumbler">
+                            </div>
+                            <h3>John Bell Yeti</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$30</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="shop-row" aria-labelledby="categories-heading">
+                    <div class="shop-row-header">
+                        <h2 id="categories-heading" class="shop-row-title">categories</h2>
+                        <a href="shop.html?section=categories" class="shop-see-all">
+                            see all
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="product-grid">
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/handmade-art.jpg" alt="Macramé wall hanging">
+                            </div>
+                            <h3>Handmade Art</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>Category</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/pin.jpg" alt="Handmade pins and crafts">
+                            </div>
+                            <h3>Crafts</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>Category</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/clothing.jpg" alt="Tie dye apparel">
+                            </div>
+                            <h3>Tie Dye</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>Category</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="shop-row" aria-labelledby="deals-heading">
+                    <div class="shop-row-header">
+                        <h2 id="deals-heading" class="shop-row-title">deals</h2>
+                        <a href="shop.html?section=deals" class="shop-see-all">
+                            see all
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="product-grid">
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/jewelry.jpg" alt="Handmade rings">
+                            </div>
+                            <h3>Rings</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$10</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/handmade-art.jpg" alt="Macramé wall hanging">
+                            </div>
+                            <h3>Macrame</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$15</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+
+                        <article class="vendor-store-product">
+                            <div class="vendor-store-product-image">
+                                <img src="assets/shop/clothing.jpg" alt="Tie dye t-shirt">
+                            </div>
+                            <h3>Tie Dye T-shirt</h3>
+                            <p>description</p>
+                            <div class="vendor-store-product-meta">
+                                <span>$15</span>
+                                <button type="button">+ cart</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="shop-search-results" data-shop-search-results hidden>
+            <p class="search-status" data-search-status></p>
+            <div class="product-grid search-results-grid" data-search-results></div>
+        </div>
+
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-watermark" aria-hidden="true">
+            <img src="./assets/Group 1.png" alt="">
+        </div>
+
+        <div class="footer-inner">
+            <div class="footer-panel">
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <img src="./assets/facebook.svg" alt="">
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img src="./assets/instagram.svg" alt="">
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <img src="./assets/tiktok.svg" alt="">
+                    </a>
+                </div>
+
+                <div class="footer-content">
+                    <p class="footer-tagline">everything but the balloons</p>
+                    <nav class="footer-nav" aria-label="Footer">
+                        <a href="index.html#what-is-on-lot">what is on lot?</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="events.html">events</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="creator-spotlight.html">creator spotlight</a>
+                        <span aria-hidden="true">&middot;</span>
+                        <a href="vendor-info.html">vendor info</a>
+                        <span aria-hidden="true">&middot;</span>
+                        <a href="shop.html">shop</a>
+                    </nav>
+                    <p class="footer-meta">
+                        <span>&copy; 2026 ON LOT</span>
+                        <span aria-hidden="true">·</span>
+                        <a href="contact.html">Contact</a>
+                        <span aria-hidden="true">·</span>
+                        <a href="faqs.html">FAQs</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config/typesense.public.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typesense@2/dist/typesense.min.js"></script>
+    <script src="js/search.js"></script>
+
+
+</body>
+
+</html>
